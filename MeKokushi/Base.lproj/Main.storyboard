@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iPM-uk-XHF">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HOME-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-y5-wCX">
+                                <rect key="frame" x="75" y="144" width="225.5" height="62"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="単元別学習" cornerStyle="fixed">
+                                    <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                        <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="cwt-da-NPq" kind="show" id="uqf-ZI-O40"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muz-8p-7Mp">
+                                <rect key="frame" x="75" y="306" width="225.5" height="62"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="年代別学習" cornerStyle="fixed">
+                                    <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                        <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="fBa-oF-boF" kind="show" id="Rau-jO-JQi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="esN-y5-wCX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8fG-dj-ryf"/>
+                            <constraint firstItem="Muz-8p-7Mp" firstAttribute="top" secondItem="esN-y5-wCX" secondAttribute="bottom" constant="100" id="E2C-rR-00P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Muz-8p-7Mp" secondAttribute="trailing" id="NyG-Bf-uIK"/>
+                            <constraint firstItem="esN-y5-wCX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="d7Y-Ee-re2"/>
+                            <constraint firstItem="Muz-8p-7Mp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lV8-mx-M70"/>
+                            <constraint firstItem="Muz-8p-7Mp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q0z-XT-3er"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="HOME" image="house.fill" catalog="system" selectedImage="house" id="Hiz-PK-IEn"/>
+                    <navigationItem key="navigationItem" id="GdL-ix-Dof"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="98.50074962518741"/>
+        </scene>
+        <!--単元を選択-->
+        <scene sceneID="W7a-uV-g9j">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="cwt-da-NPq" customClass="SelectTangenViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gmi-4I-tsd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="0SO-z9-siE">
+                                <rect key="frame" x="20" y="94" width="335" height="486"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZZ-Yx-q2d">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医学概論" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <color key="baseForegroundColor" systemColor="tintColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="BkA-5M-z2i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVZ-Xd-8x9">
+                                        <rect key="frame" x="0.0" y="56" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="臨床医学概論" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="9As-6M-rPo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2m-19-wdg">
+                                        <rect key="frame" x="0.0" y="112" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用電気電子工学">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="CTe-gT-auz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykG-hU-8TP">
+                                        <rect key="frame" x="0.0" y="168" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用機械工学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="Xvi-XT-oX0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3f-Cb-fBk">
+                                        <rect key="frame" x="0.0" y="224" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="生体物性材料工学">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="jDS-lW-9PW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTp-AL-mUb">
+                                        <rect key="frame" x="0.0" y="280" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="生体機能代行装置学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="lCw-3o-LRV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiK-k5-dTh">
+                                        <rect key="frame" x="0.0" y="336" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用治療機器学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="JBf-dj-zyE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMr-1j-gnj">
+                                        <rect key="frame" x="0.0" y="392" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="生体計測装置学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="WmY-Pr-qqk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fd-Pd-Q4Q">
+                                        <rect key="frame" x="0.0" y="448" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用機器安全管理学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="5" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tangenButtonActionWithSender:" destination="cwt-da-NPq" eventType="touchUpInside" id="nqK-db-rAm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aeP-8p-lXD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0SO-z9-siE" firstAttribute="centerX" secondItem="gmi-4I-tsd" secondAttribute="centerX" id="2qM-G3-gZ7"/>
+                            <constraint firstItem="0SO-z9-siE" firstAttribute="top" secondItem="aeP-8p-lXD" secondAttribute="top" constant="50" id="cma-fG-KCz"/>
+                            <constraint firstItem="0SO-z9-siE" firstAttribute="leading" secondItem="aeP-8p-lXD" secondAttribute="leading" constant="20" id="kuK-vd-phg"/>
+                            <constraint firstItem="aeP-8p-lXD" firstAttribute="trailing" secondItem="0SO-z9-siE" secondAttribute="trailing" constant="20" id="tdX-Ac-Scb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="単元を選択" id="DtL-e2-UjJ"/>
+                    <connections>
+                        <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC" id="d3y-az-SEg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtf-cW-IXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="98.50074962518741"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="HQ6-WL-wBt">
+            <objects>
+                <viewController id="yyN-9f-TES" customClass="BookmarkViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dxv-JL-fvo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jq2-bz-DMc">
+                                <rect key="frame" x="16" y="44" width="343" height="574"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell0" rowHeight="100" id="gRB-Zz-5gN">
+                                        <rect key="frame" x="0.0" y="44.5" width="343" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRB-Zz-5gN" id="hoU-1x-tJe">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yyN-9f-TES" id="VUC-r2-Og4"/>
+                                    <outlet property="delegate" destination="yyN-9f-TES" id="Nnh-3Z-kv7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DMh-eM-uQa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="oNy-6W-94T"/>
+                    <navigationItem key="navigationItem" id="cYU-Jo-a3e"/>
+                    <connections>
+                        <outlet property="bookmark" destination="oNy-6W-94T" id="LcK-rl-3xy"/>
+                        <outlet property="okiniirilist" destination="Jq2-bz-DMc" id="Ivx-hr-0o5"/>
+                        <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC" id="NWz-dI-Sjw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVe-Lo-2rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080.8" y="807.34632683658174"/>
+        </scene>
+        <!--年代を選択-->
+        <scene sceneID="ZCk-Qz-fcn">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="fBa-oF-boF" customClass="SelectNendaiViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wq5-e8-9v5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3SW-AF-YIs">
+                                <rect key="frame" x="20" y="94" width="335" height="438"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIw-dc-Ch9">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="第30回" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="vZd-cn-io4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib9-b2-H5h">
+                                        <rect key="frame" x="0.0" y="50" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用電気電子工学">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="gn9-tD-3PJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-Rd-Jjy">
+                                        <rect key="frame" x="0.0" y="100" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用機械工学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="PUB-tU-w2R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g90-u6-H9K">
+                                        <rect key="frame" x="0.0" y="150" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="生体物性材料工学">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="keX-hS-RSP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9W-eX-NiZ">
+                                        <rect key="frame" x="0.0" y="200" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="生体機能代行装置学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="2Ad-Ql-2Dp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8l-Vq-BRD">
+                                        <rect key="frame" x="0.0" y="250" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用治療機器学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="RJl-SB-69T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-wZ-Kh2">
+                                        <rect key="frame" x="0.0" y="300" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="生体計測装置学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="lcm-VO-eqc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yc-Eg-I4j">
+                                        <rect key="frame" x="0.0" y="350" width="335" height="38"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医学概論" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" cornerRadius="2" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <color key="baseForegroundColor" systemColor="tintColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="m0K-JE-MbM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMH-gm-sh3">
+                                        <rect key="frame" x="0.0" y="400" width="335" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="医用機器安全管理学" cornerStyle="fixed">
+                                            <backgroundConfiguration key="background" strokeWidth="2">
+                                                <color key="strokeColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="2LN-cu-kaC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JwR-1n-rIY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3SW-AF-YIs" firstAttribute="leading" secondItem="JwR-1n-rIY" secondAttribute="leading" constant="20" id="18F-eh-LkY"/>
+                            <constraint firstItem="3SW-AF-YIs" firstAttribute="leading" secondItem="JwR-1n-rIY" secondAttribute="leading" constant="20" id="1zB-fU-AJP"/>
+                            <constraint firstItem="3SW-AF-YIs" firstAttribute="centerX" secondItem="wq5-e8-9v5" secondAttribute="centerX" id="4c7-Oe-YhB"/>
+                            <constraint firstItem="JwR-1n-rIY" firstAttribute="trailing" secondItem="3SW-AF-YIs" secondAttribute="trailing" constant="20" id="SlV-Oj-7JN"/>
+                            <constraint firstItem="3SW-AF-YIs" firstAttribute="top" secondItem="JwR-1n-rIY" secondAttribute="top" constant="50" id="gzH-GQ-CVA"/>
+                            <constraint firstItem="JwR-1n-rIY" firstAttribute="trailing" secondItem="3SW-AF-YIs" secondAttribute="trailing" constant="20" id="zQU-Gv-YpN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="年代を選択" id="y28-1C-qQL"/>
+                    <connections>
+                        <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC" id="Ajm-dE-BgV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XvC-lf-LP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2396" y="877"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="oWB-7j-6pI">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Yhe-qq-qgV" customClass="QuizViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OVs-mD-CLd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kc-mt-ZOS">
+                                <rect key="frame" x="157" y="0.0" width="61.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD8-2g-qK9">
+                                <rect key="frame" x="20" y="29" width="335" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ec9-ni-X0z"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAA-Tk-JnU">
+                                <rect key="frame" x="20" y="98" width="335" height="471"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-Sv-DUh">
+                                <rect key="frame" x="20" y="229" width="335" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2xX-WF-h4u"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" verticalHuggingPriority="253" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tuc-ww-dju">
+                                <rect key="frame" x="20" y="329" width="335" height="278"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-qq-1Bv">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="51.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="btnActionWithSender:" destination="Yhe-qq-qgV" eventType="touchUpInside" id="Tcz-37-dSx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yC-Ip-yd6">
+                                        <rect key="frame" x="0.0" y="56.5" width="335" height="51.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="btnActionWithSender:" destination="Yhe-qq-qgV" eventType="touchUpInside" id="R8H-FU-ncY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRJ-Ks-zwK">
+                                        <rect key="frame" x="0.0" y="113" width="335" height="52"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="btnActionWithSender:" destination="Yhe-qq-qgV" eventType="touchUpInside" id="ufv-u0-oAJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-iC-YRL">
+                                        <rect key="frame" x="0.0" y="170" width="335" height="51.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="btnActionWithSender:" destination="Yhe-qq-qgV" eventType="touchUpInside" id="dnw-Fa-qc8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8t-qb-lfe">
+                                        <rect key="frame" x="0.0" y="226.5" width="335" height="51.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="btnActionWithSender:" destination="Yhe-qq-qgV" eventType="touchUpInside" id="lOc-Cf-9cD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="62l-aH-zhL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tuc-ww-dju" firstAttribute="centerX" secondItem="OVs-mD-CLd" secondAttribute="centerX" id="2lG-MW-Utd"/>
+                            <constraint firstItem="tuc-ww-dju" firstAttribute="leading" secondItem="62l-aH-zhL" secondAttribute="leading" constant="20" id="2ym-zx-CLc"/>
+                            <constraint firstItem="tuc-ww-dju" firstAttribute="leading" secondItem="62l-aH-zhL" secondAttribute="leading" constant="20" id="3ci-hJ-U0P"/>
+                            <constraint firstItem="RD8-2g-qK9" firstAttribute="centerX" secondItem="OVs-mD-CLd" secondAttribute="centerX" id="7mT-Ps-Tyw"/>
+                            <constraint firstItem="62l-aH-zhL" firstAttribute="trailing" secondItem="tuc-ww-dju" secondAttribute="trailing" constant="20" id="87x-OH-chI"/>
+                            <constraint firstItem="tuc-ww-dju" firstAttribute="centerX" secondItem="OVs-mD-CLd" secondAttribute="centerX" id="9QG-yI-SfW"/>
+                            <constraint firstItem="RD8-2g-qK9" firstAttribute="leading" secondItem="62l-aH-zhL" secondAttribute="leading" constant="20" id="AYK-q8-ptm"/>
+                            <constraint firstItem="62l-aH-zhL" firstAttribute="trailing" secondItem="RD8-2g-qK9" secondAttribute="trailing" constant="20" id="Nwa-eB-g4Y"/>
+                            <constraint firstItem="tuc-ww-dju" firstAttribute="top" secondItem="QYX-Sv-DUh" secondAttribute="bottom" constant="20" id="RNP-D7-aFV"/>
+                            <constraint firstItem="62l-aH-zhL" firstAttribute="trailing" secondItem="QYX-Sv-DUh" secondAttribute="trailing" constant="20" id="ahK-ZJ-iYM"/>
+                            <constraint firstItem="4Kc-mt-ZOS" firstAttribute="centerX" secondItem="OVs-mD-CLd" secondAttribute="centerX" id="c9m-Nv-8Bt"/>
+                            <constraint firstItem="QYX-Sv-DUh" firstAttribute="leading" secondItem="62l-aH-zhL" secondAttribute="leading" constant="20" id="hAk-nw-cfl"/>
+                            <constraint firstItem="62l-aH-zhL" firstAttribute="trailing" secondItem="tuc-ww-dju" secondAttribute="trailing" constant="20" id="ien-mX-O9v"/>
+                            <constraint firstItem="RD8-2g-qK9" firstAttribute="top" secondItem="4Kc-mt-ZOS" secondAttribute="bottom" constant="5" id="ldi-ln-Z4d"/>
+                            <constraint firstItem="QYX-Sv-DUh" firstAttribute="centerX" secondItem="OVs-mD-CLd" secondAttribute="centerX" id="m98-dS-bKB"/>
+                            <constraint firstItem="QYX-Sv-DUh" firstAttribute="top" secondItem="RD8-2g-qK9" secondAttribute="bottom" id="mcZ-2Z-QXf"/>
+                            <constraint firstItem="62l-aH-zhL" firstAttribute="bottom" secondItem="tuc-ww-dju" secondAttribute="bottom" constant="60" id="qCf-eW-IK8"/>
+                            <constraint firstItem="4Kc-mt-ZOS" firstAttribute="top" secondItem="62l-aH-zhL" secondAttribute="top" id="uPI-UT-XZm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tfH-HO-b2F"/>
+                    <connections>
+                        <outlet property="answerButton1" destination="LMx-qq-1Bv" id="95w-Da-aRC"/>
+                        <outlet property="answerButton2" destination="0yC-Ip-yd6" id="GRr-kU-pKD"/>
+                        <outlet property="answerButton3" destination="HRJ-Ks-zwK" id="L0W-RN-f53"/>
+                        <outlet property="answerButton4" destination="fp3-iC-YRL" id="z2z-ER-LEv"/>
+                        <outlet property="answerButton5" destination="p8t-qb-lfe" id="CET-Ba-JBB"/>
+                        <outlet property="judgeImageView" destination="gAA-Tk-JnU" id="7F8-UK-d6G"/>
+                        <outlet property="quizImageView" destination="QYX-Sv-DUh" id="ycg-z8-BZ8"/>
+                        <outlet property="quizNumberLabel" destination="4Kc-mt-ZOS" id="0Zs-uL-jch"/>
+                        <outlet property="quizTextView" destination="RD8-2g-qK9" id="RYI-qW-fqy"/>
+                        <segue destination="DQY-mj-UyK" kind="show" identifier="toResultVC" id="CpY-6e-suR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4F-v6-L3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3167.1999999999998" y="98.50074962518741"/>
+        </scene>
+        <!--リザルト-->
+        <scene sceneID="xWh-KE-UMW">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="DQY-mj-UyK" userLabel="リザルト" customClass="ResultViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fPs-II-uHV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="問題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fup-dL-BhH">
+                                <rect key="frame" x="170" y="80.5" width="35" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正誤判定" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCe-lQ-o8p">
+                                <rect key="frame" x="153" y="50" width="69" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="224" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgF-i7-DxJ">
+                                <rect key="frame" x="50" y="472" width="275" height="74"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="次の問題へ">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextbutton:" destination="DQY-mj-UyK" eventType="touchUpInside" id="i0Q-av-upB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="解答" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-Uu-RBN">
+                                <rect key="frame" x="170" y="432" width="35" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrv-ap-6a7">
+                                <rect key="frame" x="176" y="585" width="23" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="okiniiri:" destination="DQY-mj-UyK" eventType="touchUpInside" id="ofy-xh-m89"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JC8-aE-LbZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZCe-lQ-o8p" firstAttribute="top" secondItem="JC8-aE-LbZ" secondAttribute="top" constant="50" id="0PS-S5-UoH"/>
+                            <constraint firstItem="JC8-aE-LbZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ehr-Uu-RBN" secondAttribute="trailing" id="2cu-Az-TMq"/>
+                            <constraint firstItem="ZCe-lQ-o8p" firstAttribute="centerX" secondItem="fup-dL-BhH" secondAttribute="centerX" id="5gq-w0-wG1"/>
+                            <constraint firstItem="JC8-aE-LbZ" firstAttribute="bottom" secondItem="lrv-ap-6a7" secondAttribute="bottom" constant="60" id="9L3-9M-REC"/>
+                            <constraint firstItem="PgF-i7-DxJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JC8-aE-LbZ" secondAttribute="leading" id="AvE-5d-pOz"/>
+                            <constraint firstItem="JC8-aE-LbZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lrv-ap-6a7" secondAttribute="trailing" id="CeE-qQ-k4X"/>
+                            <constraint firstItem="lrv-ap-6a7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JC8-aE-LbZ" secondAttribute="leading" id="KrN-cl-dyq"/>
+                            <constraint firstItem="PgF-i7-DxJ" firstAttribute="top" secondItem="ehr-Uu-RBN" secondAttribute="bottom" constant="20" id="L0d-py-RZJ"/>
+                            <constraint firstItem="lrv-ap-6a7" firstAttribute="centerX" secondItem="fPs-II-uHV" secondAttribute="centerX" id="PbB-ON-hiO"/>
+                            <constraint firstItem="ZCe-lQ-o8p" firstAttribute="leading" secondItem="JC8-aE-LbZ" secondAttribute="leading" constant="153" id="Pvu-iy-gtr"/>
+                            <constraint firstItem="fup-dL-BhH" firstAttribute="top" secondItem="ZCe-lQ-o8p" secondAttribute="bottom" constant="10" id="U58-x9-c8R"/>
+                            <constraint firstItem="lrv-ap-6a7" firstAttribute="top" secondItem="PgF-i7-DxJ" secondAttribute="bottom" constant="39" id="Uro-ew-2UU"/>
+                            <constraint firstItem="ehr-Uu-RBN" firstAttribute="centerX" secondItem="fPs-II-uHV" secondAttribute="centerX" id="gKb-zA-fAX"/>
+                            <constraint firstItem="JC8-aE-LbZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PgF-i7-DxJ" secondAttribute="trailing" id="gTY-fN-im1"/>
+                            <constraint firstItem="PgF-i7-DxJ" firstAttribute="top" secondItem="ehr-Uu-RBN" secondAttribute="bottom" constant="20" id="h0s-x0-WPW"/>
+                            <constraint firstItem="PgF-i7-DxJ" firstAttribute="centerX" secondItem="fPs-II-uHV" secondAttribute="centerX" id="i42-vC-flC"/>
+                            <constraint firstItem="ehr-Uu-RBN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JC8-aE-LbZ" secondAttribute="leading" id="oTK-24-pqZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ああああ" id="GkF-Gj-8HK"/>
+                    <navigationItem key="navigationItem" id="lJt-Az-8vW"/>
+                    <connections>
+                        <outlet property="hanteiLabel" destination="ZCe-lQ-o8p" id="GIc-if-jiP"/>
+                        <outlet property="kaitouLabel" destination="ehr-Uu-RBN" id="rRs-DC-Hff"/>
+                        <outlet property="mondaiLabel" destination="fup-dL-BhH" id="4CK-Zl-J5a"/>
+                        <outlet property="nextquiz" destination="PgF-i7-DxJ" id="Kos-l0-4Oh"/>
+                        <outlet property="okiniiri" destination="lrv-ap-6a7" id="Ueh-SJ-gIr"/>
+                        <segue destination="u2Y-5S-fkj" kind="show" identifier="toScoreVC" id="6N0-6v-1GU"/>
+                        <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC1" id="ygf-9J-glu"/>
+                        <segue destination="yyN-9f-TES" kind="show" identifier="toBookmarkVC" id="WOq-au-ioN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IyJ-8Q-NCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4940" y="98.50074962518741"/>
+        </scene>
+        <!--Score View Controller-->
+        <scene sceneID="5Al-Dd-fBG">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="u2Y-5S-fkj" customClass="ScoreViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R3D-XK-Dui">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-31-5hC">
+                                <rect key="frame" x="129" y="70" width="117" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QPU-bI-TCx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SSg-31-5hC" firstAttribute="top" secondItem="QPU-bI-TCx" secondAttribute="top" constant="70" id="2Y2-6T-Uqj"/>
+                            <constraint firstItem="SSg-31-5hC" firstAttribute="centerX" secondItem="R3D-XK-Dui" secondAttribute="centerX" id="MuQ-2Z-rsI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UqU-dd-f7v"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="SSg-31-5hC" id="owb-O0-z0q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ty-rd-2ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5736.8000000000002" y="98.50074962518741"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cuR-vF-ale">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iPM-uk-XHF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CGQ-9i-vld">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.32317333180000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XuC-6A-nxw" kind="relationship" relationship="rootViewController" id="XNo-5g-OZW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAe-Qc-GIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="-707"/>
+        </scene>
+        <!--ME国試-->
+        <scene sceneID="NWm-id-Djp">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XuC-6A-nxw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="ME国試" id="v9m-xf-X7P"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vH4-g5-yP4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Mne-Nt-yDA"/>
+                        <segue destination="yyN-9f-TES" kind="relationship" relationship="viewControllers" id="zfq-hv-ZEl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ck-4n-bu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696.79999999999995" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NWz-dI-Sjw"/>
+        <segue reference="WOq-au-ioN"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
