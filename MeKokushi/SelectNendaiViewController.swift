@@ -2,7 +2,7 @@
 //  SelectNendaiViewController.swift
 //  MeKokushi
 //
-//  Created by 具志堅靖 on 2022/08/06.
+//  Created by 具志堅 on 2022/08/06.
 //
 
 import UIKit

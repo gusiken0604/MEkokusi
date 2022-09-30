@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  MeKokushi
 //
-//  Created by 具志堅靖 on 2022/07/30.
+//  Created by 具志堅 on 2022/07/30.
 //
 
 import UIKit

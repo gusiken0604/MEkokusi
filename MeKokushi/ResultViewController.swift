@@ -2,7 +2,7 @@
 //  ResultViewController.swift
 //  MeKokushi
 //
-//  Created by 具志堅靖 on 2022/08/11.
+//  Created by 具志堅 on 2022/08/11.
 //
 
 import UIKit
