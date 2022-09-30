@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MeKokushi
 //
-//  Created by 具志堅靖 on 2022/07/30.
+//  Created by  on 2022/07/30.
 //
 
 import UIKit
