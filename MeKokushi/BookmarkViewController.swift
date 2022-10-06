@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITabBarDelegate,UITabBarControllerDelegate{
     
     var csvArray: [String] = []//CSVを入れる箱
     var quizArray: [String] = []
@@ -24,25 +24,45 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let action = #selector(rightButtonPressed(_:))
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
-        tabBarController?.tabBar.isHidden = true//tabBar非表示
-    //self.navigationItem.hidesBackButton = false
-//        self.navigationItem.hidesBackButton = true
-        //self.navigationItem.setHidesBackButton(false, animated: false)
-        ///title = "ブックマーク"
+//        self.loadView()
+//        self.viewDidLoad()
+        //self.delegate = self
+        //tabBarController?.tabBar.isHidden = true//tabBar非表示
+
 
         okiniirilist.delegate = self
         okiniirilist.dataSource = self
         
         
+//        func tabBar(_ tabBar: UITabBar,didSelect item: UITabBarItem) {
+//            if (item.tag == 1){
+//                print("aaaaaa")
+//            } else {
+//                print("bbbbbbb")
+//            }
+//        }
+//        func tabBar(tabBar: UITabBar,didSelectItem item: UITabBarItem) {
+//                switch item.tag {
+//                case 1 :
+//                    print("aaaaaaa")
+//                default:
+//                    print("bbbbbb")
+//                }
+//            }
 
     }// viewDidLoad終わり
-
+//func tabBar(tabBar: UITabBar,didSelectItem item: UITabBarItem) {
+//        switch item.tag {
+//        case 1 :
+//            print("aaaaaaa")
+//        default:
+//            print("bbbbbb")
+//        }
+//    }
     //画面が遷移する直前に実行
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+      
             //self.navigationItem.hidesBackButton = true
 //self.navigationItem.setHidesBackButton(false, animated: false)
 //        title = "ブックマーク"
@@ -51,28 +71,28 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cellArray = []
         quizCount = 0
         mondaiIDArray = []
-        print("お気に入りフラグ1\(touroku)")
+//        print("お気に入りフラグ1\(touroku)")
         //print("\(touroku1!)")
         //csv読み込むブロック
         csvArray = loadCSV(fileName: "quiz0")//quiz0.csv固定
         quizArray = csvArray[quizCount].components(separatedBy: ",")
-        print("クイズカウント1番\(quizCount)")
+//        print("クイズカウント1番\(quizCount)")
         mondaiID = quizArray[10]
         let touroku = UserDefaults.standard.string(forKey: mondaiID)
-        print("お気に入りフラグ2\(touroku!)")
-        print(quizArray[10])
+//        print("お気に入りフラグ2\(touroku!)")
+//        print(quizArray[10])
         
         if touroku == "1" {
             cellArray += [quizArray[0]]
             mondaiIDArray += [quizArray[10]]
-            print("お気に入りフラグifff\(touroku!)")
-            print("クイズカウント2番\(quizCount)")//0
+//            print("お気に入りフラグifff\(touroku!)")
+//            print("クイズカウント2番\(quizCount)")//0
             nextQuiz()
         } else {
             nextQuiz()//修正前
         }
         okiniirilist.reloadData()
-        print("画面遷移")
+//        print("画面遷移")
         
         //navigationController?.isNavigationBarHidden = true
         
@@ -86,16 +106,16 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //print("クイズカウント3番\(quizCount)")//1
         if quizCount < csvArray.count {
             quizArray = csvArray[quizCount].components(separatedBy:",")
-            print("クイズカウント5番\(quizCount)")
+//            print("クイズカウント5番\(quizCount)")
             mondaiID = quizArray[10]
-            print(mondaiID)
+//            print(mondaiID)
             let touroku = UserDefaults.standard.string(forKey: mondaiID)
-            print(cellArray)
+//            print(cellArray)
             //print("お気に入りフラグ3\(touroku!)")
             if touroku == "1" {
                 cellArray += [quizArray[0]]
                 mondaiIDArray += [quizArray[10]]
-                print(cellArray)
+//                print(cellArray)
                 nextQuiz()//追加
             } else {
                 nextQuiz()

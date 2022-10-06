@@ -7,14 +7,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITabBarDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+//        func tabBar(_ tabBar: UITabBar,didSelect item: UITabBarItem) {
+//            if (item.tag == 1){
+//                print("aaaaaa")
+//            } else {
+//                print("bbbbbbb")
+//            }
+//        }
+        
         //navigationController?.isNavigationBarHidden = true//ナビゲーションバー非表示
     }
+    
+//func tabBar(tabBar: UITabBar,disSelectItem item: UITabBarItem) {
+//        if item.tag == 1 {
+//            print("タグ１")
+//        }else {
+//            
+//        }
+//    }
 
 
 }

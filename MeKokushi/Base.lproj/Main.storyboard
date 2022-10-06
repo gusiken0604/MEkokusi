@@ -244,7 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="DMh-eM-uQa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="oNy-6W-94T"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="ブックマーク" image="book" catalog="system" id="oNy-6W-94T"/>
                     <navigationItem key="navigationItem" title="ブックマーク" id="cYU-Jo-a3e">
                         <barButtonItem key="backBarButtonItem" enabled="NO" title="＞＞戻" id="g0D-gQ-UKa"/>
                     </navigationItem>
@@ -684,7 +684,7 @@
         <!--ME国試-->
         <scene sceneID="NWm-id-Djp">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XuC-6A-nxw" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XuC-6A-nxw" customClass="MyTabBarControlller" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ME国試" leftItemsSupplementBackButton="YES" id="v9m-xf-X7P">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="ezh-if-tGU"/>
@@ -705,10 +705,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NWz-dI-Sjw"/>
+        <segue reference="d3y-az-SEg"/>
         <segue reference="zfq-hv-ZEl"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="star" catalog="system" width="128" height="116"/>

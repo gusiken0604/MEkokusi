@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A2F37885EEF1E2EC55715055 /* Pods_MeKokushi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C5A775C3DC743F3D1AFB12 /* Pods_MeKokushi.framework */; };
+		C529D36528EF363B00BC314D /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C529D36428EF363B00BC314D /* MyTabBarController.swift */; };
 		C52A73F3289EB158009C1241 /* 30AM40-0.webp in Resources */ = {isa = PBXBuildFile; fileRef = C52A73F2289EB158009C1241 /* 30AM40-0.webp */; };
 		C52A73F5289EB9D9009C1241 /* 30AM40.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C52A73F4289EB9D9009C1241 /* 30AM40.jpeg */; };
 		C53C7D8128A98B56003AE6D8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C7D8028A98B56003AE6D8 /* TabViewController.swift */; };
@@ -36,6 +37,7 @@
 		387F8366FB2F4B296DC52816 /* Pods-MeKokushi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeKokushi.release.xcconfig"; path = "Target Support Files/Pods-MeKokushi/Pods-MeKokushi.release.xcconfig"; sourceTree = "<group>"; };
 		45662EC8D4600657E2C0ED8E /* Pods-MeKokushi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeKokushi.debug.xcconfig"; path = "Target Support Files/Pods-MeKokushi/Pods-MeKokushi.debug.xcconfig"; sourceTree = "<group>"; };
 		A9C5A775C3DC743F3D1AFB12 /* Pods_MeKokushi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeKokushi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C529D36428EF363B00BC314D /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C52A73F2289EB158009C1241 /* 30AM40-0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "30AM40-0.webp"; sourceTree = "<group>"; };
 		C52A73F4289EB9D9009C1241 /* 30AM40.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 30AM40.jpeg; sourceTree = "<group>"; };
 		C53C7D8028A98B56003AE6D8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				C56A4C532894C97F008F22C4 /* ViewController.swift */,
 				C56A4C4F2894C97F008F22C4 /* AppDelegate.swift */,
 				C56A4C552894C97F008F22C4 /* Main.storyboard */,
+				C529D36428EF363B00BC314D /* MyTabBarController.swift */,
 				C53C7D8028A98B56003AE6D8 /* TabViewController.swift */,
 				C5B967B2289D789D00CCA641 /* SelectNendaiViewController.swift */,
 				C56A4C6D2895AAE3008F22C4 /* SelectTangenViewController.swift */,
@@ -273,6 +276,7 @@
 			files = (
 				C56A4C542894C97F008F22C4 /* ViewController.swift in Sources */,
 				C5B967B3289D789D00CCA641 /* SelectNendaiViewController.swift in Sources */,
+				C529D36528EF363B00BC314D /* MyTabBarController.swift in Sources */,
 				C56A4C502894C97F008F22C4 /* AppDelegate.swift in Sources */,
 				C58DA17728A4A65100FD8F0D /* ResultViewController.swift in Sources */,
 				C56A4C662894D9E9008F22C4 /* ScoreViewController.swift in Sources */,
