@@ -122,11 +122,8 @@ class ResultViewController: UIViewController {
             self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消
            // UINavigationController.setNavigationBarHidden(true:)
             //self.navigationItem.setNavigationBarHidden(true, animated: )
-            navigationController?.isNavigationBarHidden = true
+            //navigationController?.isNavigationBarHidden = true
             
-//            override func viewWillAppear(_ animated: Bool){
-//                super.viewWillAppear(animated)
-//                navigationController?.isNavigationBarHidden = false
             
         } else {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
@@ -148,20 +145,9 @@ class ResultViewController: UIViewController {
     }
     //遷移先の分岐
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            //if owari1 == 1 {
-//                let scoreVC = segue.destination as! ScoreViewController
-//                                scoreVC.correctCount2 = correctCount1
-//            } else {
-//                let quizVC = segue.destination as! QuizViewController
-//                                quizVC.quizCount = quizCount1 + 1//次の問題
-//                                quizVC.mondaisuu = mondaisuu1 + 1
-//                                print("mondaisuu1は\(mondaisuu1)")
-//                                quizVC.selectLevel = selectLevel1
-//                                quizVC.correctCount = correctCount1
-//            }
             
             if segue.identifier == "toScoreVC" {
-            let scoreVC = segue.destination as! ScoreViewController
+                let scoreVC = segue.destination as! ScoreViewController
                 scoreVC.correctCount2 = correctCount1
             } else if segue.identifier == "toQuizVC1"{
                 let quizVC = segue.destination as! QuizViewController
@@ -170,14 +156,14 @@ class ResultViewController: UIViewController {
                 print("mondaisuu1は\(mondaisuu1)")
                 quizVC.selectLevel = selectLevel1
                 quizVC.correctCount = correctCount1
-
-                            }   else {
-           }
+                
+            }   else {
+            }
         }
 
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
+        //navigationController?.isNavigationBarHidden = false
     }
 
 

@@ -20,18 +20,33 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet var bookmark: UITabBar!//UITabBarItemから変更
     
     @IBOutlet weak var okiniirilist: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //let action = #selector(rightButtonPressed(_:))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
+        tabBarController?.tabBar.isHidden = true//tabBar非表示
+    //self.navigationItem.hidesBackButton = false
+//        self.navigationItem.hidesBackButton = true
+        //self.navigationItem.setHidesBackButton(false, animated: false)
+        ///title = "ブックマーク"
 
         okiniirilist.delegate = self
         okiniirilist.dataSource = self
+        
+        
 
     }// viewDidLoad終わり
 
     //画面が遷移する直前に実行
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
+            //self.navigationItem.hidesBackButton = true
+//self.navigationItem.setHidesBackButton(false, animated: false)
+//        title = "ブックマーク"
+//       self.navigationItem.setHidesBackButton(false, animated: false)
 
         cellArray = []
         quizCount = 0
@@ -58,7 +73,13 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         okiniirilist.reloadData()
         print("画面遷移")
-    }
+        
+        //navigationController?.isNavigationBarHidden = true
+        
+        //navigationController?.isNavigationBarHidden = false
+        //navigationController?.navigationBar.isHidden = false
+    }//ViewWillAppear終了
+    
     //次の問題を表示させるブロック
     func nextQuiz(){
         quizCount += 1

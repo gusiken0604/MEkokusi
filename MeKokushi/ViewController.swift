@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //self.title = "ME国試いいいいい"///TabBarタイトル
+        //navigationController?.isNavigationBarHidden = true//ナビゲーションバー非表示
     }
 
 
