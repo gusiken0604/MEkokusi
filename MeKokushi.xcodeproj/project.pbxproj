@@ -11,7 +11,6 @@
 		C529D36528EF363B00BC314D /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C529D36428EF363B00BC314D /* MyTabBarController.swift */; };
 		C52A73F3289EB158009C1241 /* 30AM40-0.webp in Resources */ = {isa = PBXBuildFile; fileRef = C52A73F2289EB158009C1241 /* 30AM40-0.webp */; };
 		C52A73F5289EB9D9009C1241 /* 30AM40.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C52A73F4289EB9D9009C1241 /* 30AM40.jpeg */; };
-		C53C7D8128A98B56003AE6D8 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C7D8028A98B56003AE6D8 /* TabViewController.swift */; };
 		C53D192628BB4E1000EC9E76 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53D192528BB4E1000EC9E76 /* BookmarkViewController.swift */; };
 		C56A4C502894C97F008F22C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A4C4F2894C97F008F22C4 /* AppDelegate.swift */; };
 		C56A4C522894C97F008F22C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A4C512894C97F008F22C4 /* SceneDelegate.swift */; };
@@ -40,7 +39,6 @@
 		C529D36428EF363B00BC314D /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C52A73F2289EB158009C1241 /* 30AM40-0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "30AM40-0.webp"; sourceTree = "<group>"; };
 		C52A73F4289EB9D9009C1241 /* 30AM40.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 30AM40.jpeg; sourceTree = "<group>"; };
-		C53C7D8028A98B56003AE6D8 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		C53D192528BB4E1000EC9E76 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		C56A4C4C2894C97F008F22C4 /* MeKokushi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeKokushi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56A4C4F2894C97F008F22C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				C56A4C4F2894C97F008F22C4 /* AppDelegate.swift */,
 				C56A4C552894C97F008F22C4 /* Main.storyboard */,
 				C529D36428EF363B00BC314D /* MyTabBarController.swift */,
-				C53C7D8028A98B56003AE6D8 /* TabViewController.swift */,
 				C5B967B2289D789D00CCA641 /* SelectNendaiViewController.swift */,
 				C56A4C6D2895AAE3008F22C4 /* SelectTangenViewController.swift */,
 				C56A4C632894D8DB008F22C4 /* QuizViewController.swift */,
@@ -282,7 +279,6 @@
 				C56A4C662894D9E9008F22C4 /* ScoreViewController.swift in Sources */,
 				C56A4C522894C97F008F22C4 /* SceneDelegate.swift in Sources */,
 				C53D192628BB4E1000EC9E76 /* BookmarkViewController.swift in Sources */,
-				C53C7D8128A98B56003AE6D8 /* TabViewController.swift in Sources */,
 				C56A4C6E2895AAE3008F22C4 /* SelectTangenViewController.swift in Sources */,
 				C56A4C642894D8DB008F22C4 /* QuizViewController.swift in Sources */,
 			);

@@ -24,6 +24,7 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.navigationItem.title = "title"
 //        self.loadView()
 //        self.viewDidLoad()
         //self.delegate = self
@@ -62,7 +63,7 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //画面が遷移する直前に実行
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      
+        //self.navigationController?.setNavigationBarHidden(true, animated: false)
             //self.navigationItem.hidesBackButton = true
 //self.navigationItem.setHidesBackButton(false, animated: false)
 //        title = "ブックマーク"

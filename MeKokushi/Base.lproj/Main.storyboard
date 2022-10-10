@@ -245,7 +245,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="ブックマーク" image="book" catalog="system" id="oNy-6W-94T"/>
-                    <navigationItem key="navigationItem" title="ブックマーク" id="cYU-Jo-a3e">
+                    <navigationItem key="navigationItem" title="ブックマーク" leftItemsSupplementBackButton="YES" id="cYU-Jo-a3e">
                         <barButtonItem key="backBarButtonItem" enabled="NO" title="＞＞戻" id="g0D-gQ-UKa"/>
                     </navigationItem>
                     <connections>
@@ -420,13 +420,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kc-mt-ZOS">
-                                <rect key="frame" x="157" y="44" width="61.5" height="24"/>
+                                <rect key="frame" x="157" y="0.0" width="61.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD8-2g-qK9">
-                                <rect key="frame" x="20" y="73" width="335" height="200"/>
+                                <rect key="frame" x="20" y="29" width="335" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ec9-ni-X0z"/>
@@ -440,16 +440,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-Sv-DUh">
-                                <rect key="frame" x="20" y="273" width="335" height="80"/>
+                                <rect key="frame" x="20" y="229" width="335" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="2xX-WF-h4u"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="245" verticalHuggingPriority="253" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tuc-ww-dju">
-                                <rect key="frame" x="20" y="373" width="335" height="234"/>
+                                <rect key="frame" x="20" y="329" width="335" height="278"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-qq-1Bv">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="51.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
@@ -458,7 +458,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yC-Ip-yd6">
-                                        <rect key="frame" x="0.0" y="48" width="335" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="56.5" width="335" height="51.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
@@ -467,7 +467,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRJ-Ks-zwK">
-                                        <rect key="frame" x="0.0" y="95.5" width="335" height="43"/>
+                                        <rect key="frame" x="0.0" y="113" width="335" height="52"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
@@ -476,7 +476,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-iC-YRL">
-                                        <rect key="frame" x="0.0" y="143.5" width="335" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="170" width="335" height="51.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
@@ -485,7 +485,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8t-qb-lfe">
-                                        <rect key="frame" x="0.0" y="191" width="335" height="43"/>
+                                        <rect key="frame" x="0.0" y="226.5" width="335" height="51.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
@@ -546,13 +546,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="問題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fup-dL-BhH">
-                                <rect key="frame" x="170" y="124.5" width="35" height="20.5"/>
+                                <rect key="frame" x="170" y="80.5" width="35" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正誤判定" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCe-lQ-o8p">
-                                <rect key="frame" x="153" y="94" width="69" height="20.5"/>
+                                <rect key="frame" x="153" y="50" width="69" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -605,7 +605,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ああああ" id="GkF-Gj-8HK"/>
-                    <navigationItem key="navigationItem" id="lJt-Az-8vW"/>
+                    <navigationItem key="navigationItem" title="結果" id="lJt-Az-8vW"/>
                     <connections>
                         <outlet property="hanteiLabel" destination="ZCe-lQ-o8p" id="GIc-if-jiP"/>
                         <outlet property="kaitouLabel" destination="ehr-Uu-RBN" id="rRs-DC-Hff"/>
@@ -630,7 +630,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-31-5hC">
-                                <rect key="frame" x="129" y="114" width="117" height="60"/>
+                                <rect key="frame" x="129" y="70" width="117" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -705,8 +705,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d3y-az-SEg"/>
-        <segue reference="zfq-hv-ZEl"/>
+        <segue reference="ygf-9J-glu"/>
+        <segue reference="WOq-au-ioN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>
