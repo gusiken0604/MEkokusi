@@ -91,6 +91,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B2FCB098294F64FA00221EFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C56A4C552894C97F008F22C4 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C52A73F1289EB158009C1241 /* 問題画像 */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +132,7 @@
 				C56A4C512894C97F008F22C4 /* SceneDelegate.swift */,
 				C56A4C532894C97F008F22C4 /* ViewController.swift */,
 				C56A4C4F2894C97F008F22C4 /* AppDelegate.swift */,
-				C56A4C552894C97F008F22C4 /* Main.storyboard */,
+				B2FCB098294F64FA00221EFC /* Views */,
 				C529D36428EF363B00BC314D /* MyTabBarController.swift */,
 				C5B967B2289D789D00CCA641 /* SelectNendaiViewController.swift */,
 				C56A4C6D2895AAE3008F22C4 /* SelectTangenViewController.swift */,

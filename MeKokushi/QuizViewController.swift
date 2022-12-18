@@ -49,9 +49,7 @@ class QuizViewController: UIViewController {
         let action = #selector(rightButtonPressed(_:))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
         self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消す
-        
-        //navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+              
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
@@ -69,24 +67,16 @@ class QuizViewController: UIViewController {
         
         //終わり判定
         if quizCount + 1  < csvArray.count {
-            //print("てst")
-        } else{
+        } else {
             owari = 1
-            //print("手st２")
         }
-            
-        //}else if Int(quizArray[7]) == selectLevel {
         
-        if Int(quizArray[7]) == selectLevel {
-            //print("selectleveaa\(quizArray[7])")
-            ///////////////////////
-            //if quizArray[7].contains(selectLevel)
-            ////////////////////////
-            //print("selectleve\(selectLevel)")
+         if Int(quizArray[7]) == selectLevel {
             quizNumberLabel.text = "第\(mondaisuu)問"
             //問題分岐
             //問題テキスト
             kaigyou = quizArray[0].replacingOccurrences(of: "　", with: "\n")
+             //quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
             resultMondai = quizArray[0]
             resultMondaiID = quizArray[10]
             quizTextView.text = kaigyou
@@ -167,6 +157,7 @@ class QuizViewController: UIViewController {
     
     //ボタンを押したときに呼ばれる
     @IBAction func btnAction(sender:UIButton){
+        //print(sender.currentTitle!)
         //owari = 1
         if owari == 0 {
         quizCount = quizCount + 1
