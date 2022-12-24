@@ -215,6 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="単元を選択" id="DtL-e2-UjJ"/>
                     <connections>
+                        <outlet property="quizSelectButton" destination="TVZ-Xd-8x9" id="85W-NM-ECg"/>
                         <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC" id="d3y-az-SEg"/>
                     </connections>
                 </viewController>
@@ -687,6 +688,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="q7a-YA-KB6"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wfw-DM-ICg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

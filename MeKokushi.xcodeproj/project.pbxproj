@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A2F37885EEF1E2EC55715055 /* Pods_MeKokushi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C5A775C3DC743F3D1AFB12 /* Pods_MeKokushi.framework */; };
+		B22B4E572951D7E10002F88A /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B4E562951D7E10002F88A /* Quiz.swift */; };
+		B234F6A52954E35C009B605B /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = B234F6A42954E35C009B605B /* default.realm */; };
+		B234F6A729558507009B605B /* Quiz.csv in Resources */ = {isa = PBXBuildFile; fileRef = B234F6A629558507009B605B /* Quiz.csv */; };
 		C529D36528EF363B00BC314D /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C529D36428EF363B00BC314D /* MyTabBarController.swift */; };
 		C52A73F3289EB158009C1241 /* 30AM40-0.webp in Resources */ = {isa = PBXBuildFile; fileRef = C52A73F2289EB158009C1241 /* 30AM40-0.webp */; };
 		C52A73F5289EB9D9009C1241 /* 30AM40.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C52A73F4289EB9D9009C1241 /* 30AM40.jpeg */; };
@@ -36,6 +39,9 @@
 		387F8366FB2F4B296DC52816 /* Pods-MeKokushi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeKokushi.release.xcconfig"; path = "Target Support Files/Pods-MeKokushi/Pods-MeKokushi.release.xcconfig"; sourceTree = "<group>"; };
 		45662EC8D4600657E2C0ED8E /* Pods-MeKokushi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeKokushi.debug.xcconfig"; path = "Target Support Files/Pods-MeKokushi/Pods-MeKokushi.debug.xcconfig"; sourceTree = "<group>"; };
 		A9C5A775C3DC743F3D1AFB12 /* Pods_MeKokushi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeKokushi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22B4E562951D7E10002F88A /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		B234F6A42954E35C009B605B /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
+		B234F6A629558507009B605B /* Quiz.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = Quiz.csv; path = MeKokushi/Quiz.csv; sourceTree = SOURCE_ROOT; };
 		C529D36428EF363B00BC314D /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C52A73F2289EB158009C1241 /* 30AM40-0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "30AM40-0.webp"; sourceTree = "<group>"; };
 		C52A73F4289EB9D9009C1241 /* 30AM40.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 30AM40.jpeg; sourceTree = "<group>"; };
@@ -94,9 +100,10 @@
 		B22B4E532951D2E50002F88A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C529D36428EF363B00BC314D /* MyTabBarController.swift */,
 				C56A4C532894C97F008F22C4 /* TopViewController.swift */,
-				C5B967B2289D789D00CCA641 /* SelectNendaiViewController.swift */,
 				C56A4C6D2895AAE3008F22C4 /* SelectTangenViewController.swift */,
+				C5B967B2289D789D00CCA641 /* SelectNendaiViewController.swift */,
 				C56A4C632894D8DB008F22C4 /* QuizViewController.swift */,
 				C58DA17628A4A65100FD8F0D /* ResultViewController.swift */,
 				C53D192528BB4E1000EC9E76 /* BookmarkViewController.swift */,
@@ -108,6 +115,8 @@
 		B22B4E542951D3120002F88A /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				B234F6A629558507009B605B /* Quiz.csv */,
+				B22B4E562951D7E10002F88A /* Quiz.swift */,
 				C56A4C672894FCB6008F22C4 /* quiz0.csv */,
 				C56A4C6F2895BF23008F22C4 /* quiz1.csv */,
 				C56A4C712895BF6C008F22C4 /* quiz2.csv */,
@@ -164,10 +173,10 @@
 			children = (
 				C56A4C512894C97F008F22C4 /* SceneDelegate.swift */,
 				C56A4C4F2894C97F008F22C4 /* AppDelegate.swift */,
+				B234F6A42954E35C009B605B /* default.realm */,
 				B22B4E532951D2E50002F88A /* Controllers */,
 				B22B4E542951D3120002F88A /* Data Model */,
 				B2FCB098294F64FA00221EFC /* Views */,
-				C529D36428EF363B00BC314D /* MyTabBarController.swift */,
 				C5B967B0289B680C00CCA641 /* 180.png */,
 				B22B4E552951D3380002F88A /* Supporting Files */,
 				C56A4C5D2894C980008F22C4 /* Info.plist */,
@@ -242,12 +251,14 @@
 				C5B967AD289B633F00CCA641 /* ME国試.png in Resources */,
 				C56A4C6B289526E0008F22C4 /* correct.png in Resources */,
 				C52A73F3289EB158009C1241 /* 30AM40-0.webp in Resources */,
+				B234F6A729558507009B605B /* Quiz.csv in Resources */,
 				C56A4C6C289526E0008F22C4 /* incorrect.png in Resources */,
 				C52A73F5289EB9D9009C1241 /* 30AM40.jpeg in Resources */,
 				C56A4C5C2894C980008F22C4 /* LaunchScreen.storyboard in Resources */,
 				C56A4C592894C980008F22C4 /* Assets.xcassets in Resources */,
 				C5B967B1289B680C00CCA641 /* 180.png in Resources */,
 				C56A4C572894C97F008F22C4 /* Main.storyboard in Resources */,
+				B234F6A52954E35C009B605B /* default.realm in Resources */,
 				C56A4C682894FCB6008F22C4 /* quiz0.csv in Resources */,
 				C56A4C702895BF23008F22C4 /* quiz1.csv in Resources */,
 				C56A4C722895BF6C008F22C4 /* quiz2.csv in Resources */,
@@ -307,6 +318,7 @@
 				C5B967B3289D789D00CCA641 /* SelectNendaiViewController.swift in Sources */,
 				C529D36528EF363B00BC314D /* MyTabBarController.swift in Sources */,
 				C56A4C502894C97F008F22C4 /* AppDelegate.swift in Sources */,
+				B22B4E572951D7E10002F88A /* Quiz.swift in Sources */,
 				C58DA17728A4A65100FD8F0D /* ResultViewController.swift in Sources */,
 				C56A4C662894D9E9008F22C4 /* ScoreViewController.swift in Sources */,
 				C56A4C522894C97F008F22C4 /* SceneDelegate.swift in Sources */,

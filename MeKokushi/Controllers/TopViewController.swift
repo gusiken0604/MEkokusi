@@ -6,33 +6,38 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TopViewController: UIViewController,UITabBarDelegate{
+    
+    
+    
+//let realm = try! Realm()
+    let realm = try! Realm(fileURL: URL(string: Bundle.main.path(forResource: "default", ofType: "realm")!)!)
+    
+    let quiz = Quiz()
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-//        func tabBar(_ tabBar: UITabBar,didSelect item: UITabBarItem) {
-//            if (item.tag == 1){
-//                print("aaaaaa")
-//            } else {
-//                print("bbbbbbb")
-//            }
-//        }
         
-        //navigationController?.isNavigationBarHidden = true//ナビゲーションバー非表示
-    }
-    
-//func tabBar(tabBar: UITabBar,disSelectItem item: UITabBarItem) {
-//        if item.tag == 1 {
-//            print("タグ１")
-//        }else {
-//            
+        
+        
+        //relmデータ削除
+//        try! realm.write {
+//            realm.deleteAll()
 //        }
-//    }
+//
+//        quiz.tangen = "医学概論aa２"
+//        try! realm.write {
+//            realm.add(quiz)
+//        }
 
+        let quizResult = realm.objects(Quiz.self)
+        print("realmファイル読み込み\(quizResult)")
+
+     
+    }
 
 }
-
-//bookとbook.fill
