@@ -215,7 +215,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="単元を選択" id="DtL-e2-UjJ"/>
                     <connections>
-                        <outlet property="quizSelectButton" destination="TVZ-Xd-8x9" id="85W-NM-ECg"/>
+                        <outletCollection property="quizSelectButton" destination="5ZZ-Yx-q2d" collectionClass="NSMutableArray" id="8th-mW-qAG"/>
+                        <outletCollection property="quizSelectButton" destination="TVZ-Xd-8x9" collectionClass="NSMutableArray" id="xFm-xN-wII"/>
+                        <outletCollection property="quizSelectButton" destination="I2m-19-wdg" collectionClass="NSMutableArray" id="7vE-gp-NtI"/>
+                        <outletCollection property="quizSelectButton" destination="ykG-hU-8TP" collectionClass="NSMutableArray" id="28t-bL-C7J"/>
+                        <outletCollection property="quizSelectButton" destination="r3f-Cb-fBk" collectionClass="NSMutableArray" id="ufz-mZ-b5j"/>
+                        <outletCollection property="quizSelectButton" destination="kTp-AL-mUb" collectionClass="NSMutableArray" id="XZP-V4-9rP"/>
+                        <outletCollection property="quizSelectButton" destination="oiK-k5-dTh" collectionClass="NSMutableArray" id="scb-5r-guG"/>
+                        <outletCollection property="quizSelectButton" destination="kMr-1j-gnj" collectionClass="NSMutableArray" id="UWX-ce-DtY"/>
+                        <outletCollection property="quizSelectButton" destination="3Fd-Pd-Q4Q" collectionClass="NSMutableArray" id="jud-m4-YEA"/>
                         <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC" id="d3y-az-SEg"/>
                     </connections>
                 </viewController>

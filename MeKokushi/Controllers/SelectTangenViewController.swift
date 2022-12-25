@@ -6,27 +6,28 @@
 //
 
 import UIKit
-import RealmSwift
 
 class SelectTangenViewController: UIViewController {
-    
-    
+    var selectedButton = ""
+      var selectTag = 0
+  
+    @IBOutlet var quizSelectButton: [UIButton]!
+    let buttonNames = ["医学概論","臨床医学概論","医用電気電子工学","医用機械工学","生体物性材料工学","生体機能代行装置学","医用治療機器学","生体計測装置学","医用機器安全管理学"]
+    //ボタンの名前
+    func setButtonName() {
+        for index in quizSelectButton.indices {
+            quizSelectButton[index].setTitle(buttonNames[index], for: .normal)
+            
+        }
+    }
 
-    
-    //let quiz = Quiz()
-    //var tangen: Results<Quiz>?
-    
-    var selectTag = 0
-    //var tag1: Int?
-
-    
-    @IBOutlet weak var quizSelectButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         let UINavigationController = tabBarController?.viewControllers?[1];
         tabBarController?.selectedViewController = UINavigationController;
-
-
+        
+        setButtonName()
+       
     }
     
     
@@ -39,11 +40,11 @@ class SelectTangenViewController: UIViewController {
     }
     
     @IBAction func tangenButtonAction(sender: UIButton){
-        
-        //print(sender.currentTitle as Any)
 
-        print(sender.tag)
+    selectedButton = sender.currentTitle!
         selectTag = sender.tag
+        print("選択した単元は\(selectedButton)")
+        print("選択したタグは\(selectTag)")
    
 
         performSegue(withIdentifier: "toQuizVC", sender: nil)

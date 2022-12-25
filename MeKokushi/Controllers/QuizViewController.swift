@@ -6,9 +6,14 @@
 //
 
 import UIKit
-//import GoogleMobileAds
+import RealmSwift
 
 class QuizViewController: UIViewController {
+    
+    //let realm = try! Realm(fileURL: URL(string: Bundle.main.path(forResource: "default", ofType: "realm")!)!)
+    
+    //let quiz = Quiz()
+    
     @IBOutlet var quizNumberLabel: UILabel!
     @IBOutlet var quizTextView: UITextView!
     @IBOutlet var answerButton1: UIButton!
@@ -35,6 +40,8 @@ class QuizViewController: UIViewController {
     var mondaiID = "0"
     var fromBookmark = 0
     var fromBookmarkowari = 0
+    
+    
     //var okiniiri = 0
     //ナビゲーションバーの右ボタン
     @objc func rightButtonPressed(_ sender: UIBarButtonItem) {
@@ -44,18 +51,28 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //relmデータ削除
+//        try! realm.write {
+//            realm.deleteAll()
+//        }
+//
+//        quiz.tangen = "医学概論aa２"
+//        try! realm.write {
+//            realm.add(quiz)
+//        }
+//
+//        let quizResult = realm.objects(Quiz.self)
+//        print("realmファイル読み込み\(quizResult)")
         
+        //let result = realm.objects(Quiz.self).filter("tangen == '医学概論'")
+        //let result = realm.objects(Quiz.self).filter("tangen == '医学概論'").value(forKey: "tangen")
+
+        //print(result)
         //ナビゲーションバーの右ボタン
         let action = #selector(rightButtonPressed(_:))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
         self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消す
               
-//        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-//        bannerView.rootViewController = self
-//        bannerView.load(GADRequest())
-//        addBannerViewToView(bannerView)
-        
         //print("選択した科目は\(selectLevel)")
         
         
@@ -70,8 +87,10 @@ class QuizViewController: UIViewController {
         } else {
             owari = 1
         }
-        
-         if Int(quizArray[7]) == selectLevel {
+        var quizTangen = quizArray[7]
+        print("変数クイズ単元は\(quizTangen)")
+        if Int(quizTangen) == selectLevel {
+         //if Int(quizArray[7]) == selectLevel {
             quizNumberLabel.text = "第\(mondaisuu)問"
             //問題分岐
             //問題テキスト
@@ -355,43 +374,8 @@ class QuizViewController: UIViewController {
             csvArray = lineCange.components(separatedBy:"\n")
             csvArray.removeLast()
         } catch {
-            print("エラー")
+            print("CSV読み込みエラー")
         }
         return csvArray
     }
-    //GoogleAdMob
-//    func addBannerViewToView(_ bannerView: GADBannerView) {
-//        bannerView.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(bannerView)
-//        view.addConstraints(
-//            [NSLayoutConstraint(item:bannerView,
-//                                attribute: .bottom,
-//                                relatedBy:  .equal,
-//                                toItem: view.safeAreaLayoutGuide,
-//                                attribute: .bottom,
-//                                multiplier:1,
-//                                constant: 0),
-//             NSLayoutConstraint(item: bannerView,
-//                                attribute: .centerX,
-//                                relatedBy:  .equal,
-//                                toItem: view,
-//                                attribute: .centerX,
-//                                multiplier:1,
-//                                constant:0)
-//            ])
-//
-//    }
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
