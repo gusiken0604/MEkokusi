@@ -24,13 +24,13 @@ class QuizViewController: UIViewController {
     @IBOutlet var judgeImageView: UIImageView!
     @IBOutlet var quizImageView: UIImageView!
     
-    //var bannerView: GADBannerView!
     var csvArray: [String] = []//CSVを入れる箱
     var quizArray: [String] = []
     var quizCount = 0
     var correctCount = 0//正解カウント
     var selectLevel = 0//SelectTangenViewからの値が入る
-    var kaigyou = "abcdf"
+    var quizTangen = ""//SelectTangenViewからの値が入る
+    var kaigyou = "adf"
     var gazou = "avav"
     var result = 0
     var mondaisuu = 1
@@ -51,23 +51,7 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //relmデータ削除
-//        try! realm.write {
-//            realm.deleteAll()
-//        }
-//
-//        quiz.tangen = "医学概論aa２"
-//        try! realm.write {
-//            realm.add(quiz)
-//        }
-//
-//        let quizResult = realm.objects(Quiz.self)
-//        print("realmファイル読み込み\(quizResult)")
-        
-        //let result = realm.objects(Quiz.self).filter("tangen == '医学概論'")
-        //let result = realm.objects(Quiz.self).filter("tangen == '医学概論'").value(forKey: "tangen")
 
-        //print(result)
         //ナビゲーションバーの右ボタン
         let action = #selector(rightButtonPressed(_:))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
@@ -87,9 +71,11 @@ class QuizViewController: UIViewController {
         } else {
             owari = 1
         }
-        var quizTangen = quizArray[7]
+        //var quizTangen = quizArray[7]
         print("変数クイズ単元は\(quizTangen)")
-        if Int(quizTangen) == selectLevel {
+        print("quizArray[7]は\(quizArray[10])")
+        if quizArray[7] == quizTangen {
+       // if Int(quizTangen) == selectLevel {
          //if Int(quizArray[7]) == selectLevel {
             quizNumberLabel.text = "第\(mondaisuu)問"
             //問題分岐
@@ -315,8 +301,8 @@ class QuizViewController: UIViewController {
 //        print("123123123123")
         if quizCount < csvArray.count {
             quizArray = csvArray[quizCount].components(separatedBy:",")
-
-            if Int(quizArray[7]) == selectLevel {
+            if quizArray[7] == quizTangen {
+            //if Int(quizArray[7]) == selectLevel {
                 quizNumberLabel.text = "第\(mondaisuu)問"
 
                 //quizTextView.text = quizArray[0]

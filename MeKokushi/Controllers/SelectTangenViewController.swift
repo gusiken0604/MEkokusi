@@ -8,7 +8,7 @@
 import UIKit
 
 class SelectTangenViewController: UIViewController {
-    var selectedButton = ""
+    var selectedButton = "adfa"
       var selectTag = 0
   
     @IBOutlet var quizSelectButton: [UIButton]!
@@ -35,6 +35,7 @@ class SelectTangenViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizVC = segue.destination as! QuizViewController
         quizVC.selectLevel = selectTag
+        quizVC.quizTangen = selectedButton
         
 
     }
@@ -43,8 +44,8 @@ class SelectTangenViewController: UIViewController {
 
     selectedButton = sender.currentTitle!
         selectTag = sender.tag
-        print("選択した単元は\(selectedButton)")
-        print("選択したタグは\(selectTag)")
+//        print("選択した単元は\(selectedButton)")
+//        print("選択したタグは\(selectTag)")
    
 
         performSegue(withIdentifier: "toQuizVC", sender: nil)
