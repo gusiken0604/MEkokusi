@@ -22,7 +22,7 @@ class ResultViewController: UIViewController {
     var correctCount1 = 1
     var quizCount1 = 0
     var mondaisuu1 = 0
-    var selectLevel1 = 0
+    var quizTangen = ""
     var changeImage = 0
     var mondaiID = "0"
     var mondaiIID = "0"
@@ -154,7 +154,7 @@ class ResultViewController: UIViewController {
                 quizVC.quizCount = quizCount1 + 1//次の問題
                 quizVC.mondaisuu = mondaisuu1 + 1
                 print("mondaisuu1は\(mondaisuu1)")
-                quizVC.selectLevel = selectLevel1
+                quizVC.quizTangen = quizTangen
                 quizVC.correctCount = correctCount1
                 
             }   else {

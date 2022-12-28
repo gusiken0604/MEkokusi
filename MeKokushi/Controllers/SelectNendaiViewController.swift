@@ -9,7 +9,8 @@ import UIKit
 
 class SelectNendaiViewController: UIViewController {
     
-    var selectTag = 0
+    //var selectTag = 0
+    var selectedButton = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +20,14 @@ class SelectNendaiViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizVC = segue.destination as! QuizViewController
-        quizVC.selectLevel = selectTag
+        quizVC.quizTangen = selectedButton
+//        quizVC.quizTangen = selectTag
         //quizVC.tag2 = selectTag
     }
     
     @IBAction func nendaiButtonAction(sender: UIButton){
         print(sender.tag)
-        selectTag = sender.tag
+//        selectTag = sender.tag
         performSegue(withIdentifier: "toQuizVC", sender: nil)
     }
     /*
