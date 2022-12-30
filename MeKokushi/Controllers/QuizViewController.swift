@@ -6,14 +6,9 @@
 //
 
 import UIKit
-import RealmSwift
 
 class QuizViewController: UIViewController {
-    
-    //let realm = try! Realm(fileURL: URL(string: Bundle.main.path(forResource: "default", ofType: "realm")!)!)
-    
-    //let quiz = Quiz()
-    
+
     @IBOutlet var quizNumberLabel: UILabel!
     @IBOutlet var quizTextView: UITextView!
     @IBOutlet var answerButton1: UIButton!
@@ -28,26 +23,21 @@ class QuizViewController: UIViewController {
     var quizArray: [String] = []
     var quizCount = 0
     var correctCount = 0//正解カウント
-    //    var quizTangen = 0//SelectTangenViewからの値が入る
     var quizTangen = ""//SelectTangenViewからの値が入る
-    var kaigyou = ""
-    var gazou = ""
+    var quizImage = ""
     var result = 0
     var mondaisuu = 1
-    var owari = 0//次の問題があるのか判定
-    var resultMondai = "0"//リザルトに表示させる問題文、mondaiに代入
-    var resultMondaiID = "0"
-    var mondaiID = "0"
+    var lastQuiz = 0//次の問題があるのか判定
+    var mondai = ""//リザルトに表示させる問題文、mondaiに代入
+    var resultMondaiID = ""
+    var mondaiID = ""
     var fromBookmark = 0
     var fromBookmarkowari = 0
     
-    
-    //var okiniiri = 0
     //ナビゲーションバーの右ボタン
     @objc func rightButtonPressed(_ sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +54,7 @@ class QuizViewController: UIViewController {
         //終わり判定
         if quizCount + 1  < csvArray.count {
         } else {
-            owari = 1
+            lastQuiz = 1
         }
         
         print("変数クイズ単元は\(quizTangen)")
@@ -74,23 +64,18 @@ class QuizViewController: UIViewController {
             quizNumberLabel.text = "第\(mondaisuu)問"
             //問題分岐
             //問題テキスト
-            kaigyou = quizArray[0].replacingOccurrences(of: "　", with: "\n")
-            //quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
-            resultMondai = quizArray[0]
+            mondai = quizArray[0]
+            print("resultMondai\(mondai)")
             resultMondaiID = quizArray[10]
-            quizTextView.text = kaigyou
+            quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
             //print(quizArray[8])
-            gazou = quizArray[8]
-            quizImageView.image = UIImage(named: gazou)
-            //owari = 1
-            //print("ここかあああ？")
+            quizImage = quizArray[8]
+            quizImageView.image = UIImage(named: quizImage)
+
             
         } else {
-            
             nextQuiz()
-            
         }
-        
         buttonLayout()
     }
     
@@ -100,15 +85,15 @@ class QuizViewController: UIViewController {
         
         resultVC.hantei = result
         resultVC.kotae = quizArray[6]
-        resultVC.mondai = resultMondai
-        resultVC.correctCount1 = correctCount
-        resultVC.quizCount1 = quizCount
-        resultVC.mondaisuu1 = mondaisuu
+        resultVC.mondai = mondai
+        resultVC.correctCount = correctCount
+        resultVC.quizCount = quizCount
+        resultVC.mondaisuu = mondaisuu
         resultVC.quizTangen = quizTangen
         resultVC.okiniiri1 = quizArray[9]
         resultVC.mondaiID = quizArray[10]
         resultVC.mondaiIID = resultMondaiID
-        resultVC.owari1 = owari//次の問題があるのか判定
+        resultVC.owari1 = lastQuiz//次の問題があるのか判定
         resultVC.fromBookmarkowari1 = fromBookmarkowari
     }
     
@@ -118,7 +103,7 @@ class QuizViewController: UIViewController {
     @IBAction func btnAction(sender:UIButton){
         //print(sender.currentTitle!)
  
-        if owari == 0 {
+        if lastQuiz == 0 {
             quizCount = quizCount + 1
             quizArray = csvArray[quizCount].components(separatedBy:",")
             quizCount = quizCount - 1
@@ -184,8 +169,6 @@ class QuizViewController: UIViewController {
         }
         
     }
-    
-    
     //次の問題を表示させるブロック
     func nextQuiz(){
         
@@ -196,20 +179,15 @@ class QuizViewController: UIViewController {
             quizArray = csvArray[quizCount].components(separatedBy:",")
             if quizArray[7] == quizTangen {
                 quizNumberLabel.text = "第\(mondaisuu)問"
-                kaigyou = quizArray[0].replacingOccurrences(of: "　", with: "\n")
-                quizTextView.text = kaigyou
-                resultMondai = quizArray[0]//test
+                quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
+                mondai = quizArray[0]//test
                 resultMondaiID = quizArray[10]
                 
-                gazou = quizArray[8]
-                quizImageView.image = UIImage(named: gazou)
-                
+                quizImage = quizArray[8]
+                quizImageView.image = UIImage(named: quizImage)
                 
             } else {
-                print("nextQuiz()else1")
-                
                 nextQuiz()
-                
             }
             
             answerButton1.setTitle(quizArray[1], for: .normal)

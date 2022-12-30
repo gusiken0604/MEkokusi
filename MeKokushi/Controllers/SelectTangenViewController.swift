@@ -44,8 +44,7 @@ class SelectTangenViewController: UIViewController {
     @IBAction func tangenButtonAction(sender: UIButton){
 
     selectedButton = sender.currentTitle!
-//        print("選択した単元は\(selectedButton)")
-//        print("選択したタグは\(selectTag)")
+
         performSegue(withIdentifier: "toQuizVC", sender: nil)
     }
 }

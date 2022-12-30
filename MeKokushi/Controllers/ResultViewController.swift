@@ -19,9 +19,9 @@ class ResultViewController: UIViewController {
     var hantei = 0//正誤判定、１が正解
     var kotae = "0" //問題の答え
     var mondai = "0"
-    var correctCount1 = 1
-    var quizCount1 = 0
-    var mondaisuu1 = 0
+    var correctCount = 1
+    var quizCount = 0
+    var mondaisuu = 0
     var quizTangen = ""
     var changeImage = 0
     var mondaiID = "0"
@@ -148,14 +148,14 @@ class ResultViewController: UIViewController {
             
             if segue.identifier == "toScoreVC" {
                 let scoreVC = segue.destination as! ScoreViewController
-                scoreVC.correctCount2 = correctCount1
+                scoreVC.correctCount2 = correctCount
             } else if segue.identifier == "toQuizVC1"{
                 let quizVC = segue.destination as! QuizViewController
-                quizVC.quizCount = quizCount1 + 1//次の問題
-                quizVC.mondaisuu = mondaisuu1 + 1
-                print("mondaisuu1は\(mondaisuu1)")
+                quizVC.quizCount = quizCount + 1//次の問題
+                quizVC.mondaisuu = mondaisuu + 1
+                print("mondaisuu1は\(mondaisuu)")
                 quizVC.quizTangen = quizTangen
-                quizVC.correctCount = correctCount1
+                quizVC.correctCount = correctCount
                 
             }   else {
             }
@@ -165,17 +165,5 @@ class ResultViewController: UIViewController {
         super.viewWillAppear(animated)
         //navigationController?.isNavigationBarHidden = false
     }
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

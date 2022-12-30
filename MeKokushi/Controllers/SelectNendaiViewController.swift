@@ -9,13 +9,11 @@ import UIKit
 
 class SelectNendaiViewController: UIViewController {
     
-    //var selectTag = 0
     var selectedButton = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
