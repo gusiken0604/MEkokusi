@@ -12,7 +12,7 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var csvArray: [String] = []//CSVを入れる箱
     var quizArray: [String] = []
     var quizCount = 0
-    var mondaiID = "0"
+    var mondaiID = ""
     var touroku = "0"
     var cellArray:[String] = []
     var mondaiIDArray:[String] = []//問題ID格納してquizviewへ受け渡す
@@ -167,7 +167,7 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let toQuizVC = segue.destination as! QuizViewController//エラー対策
-        toQuizVC.mondaiID = mondaiID
+        //toQuizVC.mondaiID = mondaiID
         toQuizVC.fromBookmark = 1
 
     }

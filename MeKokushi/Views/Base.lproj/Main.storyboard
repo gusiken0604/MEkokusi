@@ -628,7 +628,7 @@
                         <outlet property="hanteiLabel" destination="ZCe-lQ-o8p" id="GIc-if-jiP"/>
                         <outlet property="kaitouLabel" destination="ehr-Uu-RBN" id="rRs-DC-Hff"/>
                         <outlet property="mondaiLabel" destination="fup-dL-BhH" id="4CK-Zl-J5a"/>
-                        <outlet property="nextquiz" destination="PgF-i7-DxJ" id="Kos-l0-4Oh"/>
+                        <outlet property="nextQuiz" destination="PgF-i7-DxJ" id="Kos-l0-4Oh"/>
                         <outlet property="okiniiri" destination="lrv-ap-6a7" id="Ueh-SJ-gIr"/>
                         <segue destination="u2Y-5S-fkj" kind="show" identifier="toScoreVC" id="6N0-6v-1GU"/>
                         <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC1" id="ygf-9J-glu"/>

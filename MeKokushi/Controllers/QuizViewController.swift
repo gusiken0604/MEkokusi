@@ -25,12 +25,11 @@ class QuizViewController: UIViewController {
     var correctCount = 0//正解カウント
     var quizTangen = ""//SelectTangenViewからの値が入る
     var quizImage = ""
-    var result = 0
-    var mondaisuu = 1
-    var lastQuiz = 0//次の問題があるのか判定
+    var result = false
+    var quizNumber = 1
+    var lastQuiz = false//次の問題があるのか判定
     var mondai = ""//リザルトに表示させる問題文、mondaiに代入
-    var resultMondaiID = ""
-    var mondaiID = ""
+   // var resultMondaiID = ""
     var fromBookmark = 0
     var fromBookmarkowari = 0
     
@@ -47,75 +46,69 @@ class QuizViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
         self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消す
         
+        
         //csv読み込むブロック
         csvArray = loadCSV(fileName: "quiz0")//quiz0.csv固定
         quizArray = csvArray[quizCount].components(separatedBy: ",")
-        
+        print("次の問題\(lastQuiz)")
         //終わり判定
         if quizCount + 1  < csvArray.count {
+            
+            //print("次の問題1\(csvArray.count)")
         } else {
-            lastQuiz = 1
+            lastQuiz = true
         }
         
-        print("変数クイズ単元は\(quizTangen)")
-        print("quizArray[10]は\(quizArray[10])")
-        print("quizArray[7]は\(quizArray[7])")
+        //print("変数クイズ単元は\(quizTangen)")
+
+        //問題テキスト
         if quizArray[7] == quizTangen {
-            quizNumberLabel.text = "第\(mondaisuu)問"
-            //問題分岐
-            //問題テキスト
+            quizNumberLabel.text = "第\(quizNumber)問"
             mondai = quizArray[0]
             print("resultMondai\(mondai)")
-            resultMondaiID = quizArray[10]
             quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
-            //print(quizArray[8])
             quizImage = quizArray[8]
             quizImageView.image = UIImage(named: quizImage)
 
-            
+
         } else {
             nextQuiz()
         }
+
         buttonLayout()
     }
     
     //Score画面の変数correctに代入される
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let resultVC = segue.destination as! ResultViewController//エラー対策
-        
-        resultVC.hantei = result
+        resultVC.result = result
         resultVC.kotae = quizArray[6]
         resultVC.mondai = mondai
         resultVC.correctCount = correctCount
         resultVC.quizCount = quizCount
-        resultVC.mondaisuu = mondaisuu
+        resultVC.mondaisuu = quizNumber
         resultVC.quizTangen = quizTangen
-        resultVC.okiniiri1 = quizArray[9]
         resultVC.mondaiID = quizArray[10]
-        resultVC.mondaiIID = resultMondaiID
-        resultVC.owari1 = lastQuiz//次の問題があるのか判定
+        //print("登録判定\(quizArray[10])")
+        resultVC.lastQuiz = lastQuiz//次の問題があるのか判定
         resultVC.fromBookmarkowari1 = fromBookmarkowari
     }
-    
-    
-    
     //ボタンを押したときに呼ばれる
     @IBAction func btnAction(sender:UIButton){
-        //print(sender.currentTitle!)
- 
-        if lastQuiz == 0 {
+        
+        if lastQuiz == false {
             quizCount = quizCount + 1
+            print("登録判定3\(quizArray[10])")
             quizArray = csvArray[quizCount].components(separatedBy:",")
             quizCount = quizCount - 1
-
+            print("登録判定4\(quizArray[10])")
             if sender.tag == Int(quizArray[6]){
                 correctCount += 1
                 print("スコア:\(correctCount)")
-                result = 1
+                result = true
                 print("正解")
                 judgeImageView.image = UIImage(named: "correct")
             } else {
-                
                 print("不正解")
                 judgeImageView.image = UIImage(named: "incorrect")
             }
@@ -137,11 +130,11 @@ class QuizViewController: UIViewController {
                 self.performSegue(withIdentifier: "toResultVC", sender: nil)//リザルト画面へ
             }
             
-        }else{
-            if sender.tag == Int(quizArray[6]){
+        } else {
+            if sender.tag == Int(quizArray[6]) {
                 correctCount += 1
                 print("スコア:\(correctCount)")
-                result = 1
+                result = true
                 print("正解")
                 judgeImageView.image = UIImage(named: "correct")
             } else {
@@ -149,15 +142,15 @@ class QuizViewController: UIViewController {
                 print("不正解")
                 judgeImageView.image = UIImage(named: "incorrect")
             }
-            //print("スコア:\(correctCount)")
+
             judgeImageView.isHidden = false//２回目に表示させる
             answerButton1.isEnabled = false
             answerButton2.isEnabled = false
             answerButton3.isEnabled = false
             answerButton4.isEnabled = false
             answerButton5.isEnabled = false
-            //0.5秒後に非表示
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){ //0.5秒後に非表示
                 self.judgeImageView.isHidden = true
                 self.answerButton1.isEnabled = true
                 self.answerButton2.isEnabled = true
@@ -167,22 +160,19 @@ class QuizViewController: UIViewController {
                 self.performSegue(withIdentifier: "toResultVC", sender: nil)//リザルト画面へ
             }
         }
-        
     }
     //次の問題を表示させるブロック
     func nextQuiz(){
         
         quizCount += 1
-        print("nextQuiz()クイズ問題番号(mondaiID)は\(mondaiID)")
-        print("nextQuiz()quizCountは\(quizCount)")
+        print("nextQuiz()quizCount\(quizCount)")
         if quizCount < csvArray.count {
             quizArray = csvArray[quizCount].components(separatedBy:",")
+            
             if quizArray[7] == quizTangen {
-                quizNumberLabel.text = "第\(mondaisuu)問"
+                quizNumberLabel.text = "第\(quizNumber)問"
                 quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
-                mondai = quizArray[0]//test
-                resultMondaiID = quizArray[10]
-                
+                mondai = quizArray[0]
                 quizImage = quizArray[8]
                 quizImageView.image = UIImage(named: quizImage)
                 
@@ -195,8 +185,9 @@ class QuizViewController: UIViewController {
             answerButton3.setTitle(quizArray[3], for: .normal)
             answerButton4.setTitle(quizArray[4], for: .normal)
             answerButton5.setTitle(quizArray[5], for: .normal)
+            
         } else {
-            print("nextQuiz()else2")
+           // print("nextQuiz()else2")
             
             performSegue(withIdentifier: "toResultVC", sender: nil)
         }
