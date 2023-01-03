@@ -41,7 +41,7 @@
 		A9C5A775C3DC743F3D1AFB12 /* Pods_MeKokushi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeKokushi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22B4E562951D7E10002F88A /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		B234F6A42954E35C009B605B /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
-		B234F6A629558507009B605B /* Quiz.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = Quiz.csv; path = MeKokushi/Quiz.csv; sourceTree = SOURCE_ROOT; };
+		B234F6A629558507009B605B /* Quiz.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = Quiz.csv; path = MeKokushi/Quiz.csv; sourceTree = SOURCE_ROOT; };
 		C529D36428EF363B00BC314D /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C52A73F2289EB158009C1241 /* 30AM40-0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "30AM40-0.webp"; sourceTree = "<group>"; };
 		C52A73F4289EB9D9009C1241 /* 30AM40.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 30AM40.jpeg; sourceTree = "<group>"; };
@@ -115,9 +115,9 @@
 		B22B4E542951D3120002F88A /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				C56A4C672894FCB6008F22C4 /* quiz0.csv */,
 				B234F6A629558507009B605B /* Quiz.csv */,
 				B22B4E562951D7E10002F88A /* Quiz.swift */,
-				C56A4C672894FCB6008F22C4 /* quiz0.csv */,
 				C56A4C6F2895BF23008F22C4 /* quiz1.csv */,
 				C56A4C712895BF6C008F22C4 /* quiz2.csv */,
 			);

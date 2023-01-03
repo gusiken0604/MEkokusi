@@ -28,23 +28,24 @@ class ResultViewController: UIViewController {
    // var okiniiri1 = ""//お気に入り登録
     var lastQuiz = false
     let touroku = 0
-    var fromBookmarkowari1 = 0
+   // var fromBookmarkowari1 = 0
     
     
     
     
     @IBAction func nextbutton(_ sender: Any) {
         
-        if fromBookmarkowari1 == 1{
-            
-            self.performSegue(withIdentifier: "toBookmarkVC", sender: nil)
-            
-        } else if lastQuiz == true {
-            
+//        if fromBookmarkowari1 == 1{
+//
+//            self.performSegue(withIdentifier: "toBookmarkVC", sender: nil)
+//
+//        } else
+        if lastQuiz == true {
+
             self.performSegue(withIdentifier: "toScoreVC", sender: nil)
-            
+
         } else {
-            
+
             self.performSegue(withIdentifier: "toQuizVC1", sender: nil)
         }
     }
@@ -85,18 +86,24 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let quizViewController = QuizViewController()
+//        quizViewController.nextQuiz()
+        //quizViewController.judgeNextQuiz()
+        
+        //print("resultView\(lastQuiz)")
         if lastQuiz == true {
-        nextQuiz.setTitle("終了", for: .normal)
-        } else if fromBookmarkowari1 == 1 {
             nextQuiz.setTitle("終了", for: .normal)
-        } else {
-            
         }
+//        } else if fromBookmarkowari1 == 1 {
+//            nextQuiz.setTitle("終了", for: .normal)
+//        } else {
+//
+//        }
         //print("問題番号\(mondaiID)")
         //mondaiIID = mondaiID
         //print("最初読み込む前\(touroku)")
         let touroku = UserDefaults.standard.integer(forKey: mondaiID)
-        print("登録判定\(mondaiID)")
+        //print("登録判定\(mondaiID)")
         
         
     //お気に入りボタン
@@ -112,14 +119,14 @@ class ResultViewController: UIViewController {
 
         //ナビゲーションバーの右ボタン
         let action = #selector(rightButtonPressed(_:))
-        if fromBookmarkowari1 == 1 {
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "",style: .plain,target: self,action: action)
-            self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消
-            
-        } else {
+//        if fromBookmarkowari1 == 1 {
+//            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "",style: .plain,target: self,action: action)
+//            self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消
+//            
+//        } else {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "終了する",style: .plain,target: self,action: action)
-        self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消
-        }
+       self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消
+//        }
         
         if result == true {
             hanteiLabel.text = "正解"

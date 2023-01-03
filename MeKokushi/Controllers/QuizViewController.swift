@@ -27,10 +27,9 @@ class QuizViewController: UIViewController {
     var quizImage = ""
     var result = false
     var quizNumber = 1
-    var lastQuiz = false//次の問題があるのか判定
+    var existsQuiz = false//次の問題があるのか判定
     var mondai = ""//リザルトに表示させる問題文、mondaiに代入
-   // var resultMondaiID = ""
-    var fromBookmark = 0
+     var fromBookmark = 0
     var fromBookmarkowari = 0
     
     //ナビゲーションバーの右ボタン
@@ -50,36 +49,27 @@ class QuizViewController: UIViewController {
         //csv読み込むブロック
         csvArray = loadCSV(fileName: "quiz0")//quiz0.csv固定
         quizArray = csvArray[quizCount].components(separatedBy: ",")
-        print("次の問題\(lastQuiz)")
-        //終わり判定
-        if quizCount + 1  < csvArray.count {
-            
-            //print("次の問題1\(csvArray.count)")
-        } else {
-            lastQuiz = true
-        }
-        
-        //print("変数クイズ単元は\(quizTangen)")
+
 
         //問題テキスト
         if quizArray[7] == quizTangen {
             quizNumberLabel.text = "第\(quizNumber)問"
             mondai = quizArray[0]
-            print("resultMondai\(mondai)")
+            //print("resultMondai\(mondai)")
             quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
             quizImage = quizArray[8]
             quizImageView.image = UIImage(named: quizImage)
-
-
+            
         } else {
-            nextQuiz()
+             nextQuiz()
         }
-
+ 
         buttonLayout()
     }
     
     //Score画面の変数correctに代入される
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let resultVC = segue.destination as! ResultViewController//エラー対策
         resultVC.result = result
         resultVC.kotae = quizArray[6]
@@ -89,24 +79,18 @@ class QuizViewController: UIViewController {
         resultVC.mondaisuu = quizNumber
         resultVC.quizTangen = quizTangen
         resultVC.mondaiID = quizArray[10]
-        //print("登録判定\(quizArray[10])")
-        resultVC.lastQuiz = lastQuiz//次の問題があるのか判定
-        resultVC.fromBookmarkowari1 = fromBookmarkowari
+        resultVC.lastQuiz = existsQuiz//次の問題があるのか判定
+        print("ラストクイズ\(existsQuiz)")
+        //resultVC.fromBookmarkowari1 = fromBookmarkowari
     }
     //ボタンを押したときに呼ばれる
     @IBAction func btnAction(sender:UIButton){
         
-        if lastQuiz == false {
-            quizCount = quizCount + 1
-            print("登録判定3\(quizArray[10])")
-            quizArray = csvArray[quizCount].components(separatedBy:",")
-            quizCount = quizCount - 1
-            print("登録判定4\(quizArray[10])")
             if sender.tag == Int(quizArray[6]){
                 correctCount += 1
-                print("スコア:\(correctCount)")
+                //print("スコア:\(correctCount)")
                 result = true
-                print("正解")
+               // print("正解")
                 judgeImageView.image = UIImage(named: "correct")
             } else {
                 print("不正解")
@@ -130,42 +114,11 @@ class QuizViewController: UIViewController {
                 self.performSegue(withIdentifier: "toResultVC", sender: nil)//リザルト画面へ
             }
             
-        } else {
-            if sender.tag == Int(quizArray[6]) {
-                correctCount += 1
-                print("スコア:\(correctCount)")
-                result = true
-                print("正解")
-                judgeImageView.image = UIImage(named: "correct")
-            } else {
-                
-                print("不正解")
-                judgeImageView.image = UIImage(named: "incorrect")
-            }
-
-            judgeImageView.isHidden = false//２回目に表示させる
-            answerButton1.isEnabled = false
-            answerButton2.isEnabled = false
-            answerButton3.isEnabled = false
-            answerButton4.isEnabled = false
-            answerButton5.isEnabled = false
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){ //0.5秒後に非表示
-                self.judgeImageView.isHidden = true
-                self.answerButton1.isEnabled = true
-                self.answerButton2.isEnabled = true
-                self.answerButton3.isEnabled = true
-                self.answerButton4.isEnabled = true
-                self.answerButton5.isEnabled = true
-                self.performSegue(withIdentifier: "toResultVC", sender: nil)//リザルト画面へ
-            }
-        }
     }
     //次の問題を表示させるブロック
     func nextQuiz(){
-        
+        print("クイズカウント3は\(quizCount)")
         quizCount += 1
-        print("nextQuiz()quizCount\(quizCount)")
         if quizCount < csvArray.count {
             quizArray = csvArray[quizCount].components(separatedBy:",")
             
@@ -177,7 +130,9 @@ class QuizViewController: UIViewController {
                 quizImageView.image = UIImage(named: quizImage)
                 
             } else {
+
                 nextQuiz()
+                
             }
             
             answerButton1.setTitle(quizArray[1], for: .normal)
@@ -186,11 +141,9 @@ class QuizViewController: UIViewController {
             answerButton4.setTitle(quizArray[4], for: .normal)
             answerButton5.setTitle(quizArray[5], for: .normal)
             
-        } else {
-           // print("nextQuiz()else2")
-            
-            performSegue(withIdentifier: "toResultVC", sender: nil)
-        }
+      }
+        
+        exisitsNextQuiz()
     }
     
     func buttonLayout() {
@@ -245,5 +198,16 @@ class QuizViewController: UIViewController {
             print("CSV読み込みエラー")
         }
         return csvArray
+    }
+    
+    func exisitsNextQuiz() {
+        quizCount += 1
+        if quizCount < csvArray.count {
+            quizCount -= 1
+            print("クイズカウント5は\(quizCount)")
+        } else {
+            existsQuiz = true
+        }
+
     }
 }
