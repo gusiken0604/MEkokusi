@@ -50,7 +50,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="fBa-oF-boF" kind="show" id="Rau-jO-JQi"/>
+                                            <segue destination="fBa-oF-boF" kind="show" id="m4S-OO-E9R"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -269,12 +269,11 @@
                     <connections>
                         <outlet property="bookmark" destination="oNy-6W-94T" id="LcK-rl-3xy"/>
                         <outlet property="okiniirilist" destination="Jq2-bz-DMc" id="Ivx-hr-0o5"/>
-                        <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC" id="NWz-dI-Sjw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVe-Lo-2rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="807.34632683658174"/>
+            <point key="canvasLocation" x="2575" y="958"/>
         </scene>
         <!--年代を選択-->
         <scene sceneID="ZCk-Qz-fcn">
@@ -296,9 +295,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="vZd-cn-io4"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib9-b2-H5h">
                                         <rect key="frame" x="0.0" y="50" width="335" height="38"/>
@@ -309,9 +305,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="gn9-tD-3PJ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-Rd-Jjy">
                                         <rect key="frame" x="0.0" y="100" width="335" height="38"/>
@@ -322,9 +315,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="PUB-tU-w2R"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g90-u6-H9K">
                                         <rect key="frame" x="0.0" y="150" width="335" height="38"/>
@@ -335,9 +325,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="keX-hS-RSP"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9W-eX-NiZ">
                                         <rect key="frame" x="0.0" y="200" width="335" height="38"/>
@@ -348,9 +335,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="2Ad-Ql-2Dp"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8l-Vq-BRD">
                                         <rect key="frame" x="0.0" y="250" width="335" height="38"/>
@@ -361,9 +345,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="RJl-SB-69T"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-wZ-Kh2">
                                         <rect key="frame" x="0.0" y="300" width="335" height="38"/>
@@ -374,9 +355,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="lcm-VO-eqc"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yc-Eg-I4j">
                                         <rect key="frame" x="0.0" y="350" width="335" height="38"/>
@@ -389,9 +367,6 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                             <color key="baseForegroundColor" systemColor="tintColor"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="m0K-JE-MbM"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMH-gm-sh3">
                                         <rect key="frame" x="0.0" y="400" width="335" height="38"/>
@@ -402,9 +377,6 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="nendaiButtonActionWithSender:" destination="fBa-oF-boF" eventType="touchUpInside" id="2LN-cu-kaC"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -427,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XvC-lf-LP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="877"/>
+            <point key="canvasLocation" x="4242" y="896"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="oWB-7j-6pI">
@@ -632,7 +604,6 @@
                         <outlet property="okiniiri" destination="lrv-ap-6a7" id="Ueh-SJ-gIr"/>
                         <segue destination="u2Y-5S-fkj" kind="show" identifier="toScoreVC" id="6N0-6v-1GU"/>
                         <segue destination="Yhe-qq-qgV" kind="show" identifier="toQuizVC1" id="ygf-9J-glu"/>
-                        <segue destination="yyN-9f-TES" kind="show" identifier="toBookmarkVC" id="WOq-au-ioN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyJ-8Q-NCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -702,6 +673,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="U80-r8-oUs"/>
+                        <segue destination="yyN-9f-TES" kind="relationship" relationship="viewControllers" id="VMK-Ug-z1O"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh0-Dd-zSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -710,7 +682,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d3y-az-SEg"/>
+        <segue reference="Ajm-dE-BgV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book" catalog="system" width="128" height="99"/>

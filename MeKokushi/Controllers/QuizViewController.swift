@@ -49,6 +49,8 @@ class QuizViewController: UIViewController {
         //csv読み込むブロック
         csvArray = loadCSV(fileName: "quiz0")//quiz0.csv固定
         quizArray = csvArray[quizCount].components(separatedBy: ",")
+        
+        
 
 
         //問題テキスト
@@ -86,6 +88,8 @@ class QuizViewController: UIViewController {
     //ボタンを押したときに呼ばれる
     @IBAction func btnAction(sender:UIButton){
         
+
+        
             if sender.tag == Int(quizArray[6]){
                 correctCount += 1
                 //print("スコア:\(correctCount)")
@@ -117,7 +121,7 @@ class QuizViewController: UIViewController {
     }
     //次の問題を表示させるブロック
     func nextQuiz(){
-        print("クイズカウント3は\(quizCount)")
+
         quizCount += 1
         if quizCount < csvArray.count {
             quizArray = csvArray[quizCount].components(separatedBy:",")
@@ -204,10 +208,9 @@ class QuizViewController: UIViewController {
         quizCount += 1
         if quizCount < csvArray.count {
             quizCount -= 1
-            print("クイズカウント5は\(quizCount)")
         } else {
             existsQuiz = true
         }
-
+        
     }
 }

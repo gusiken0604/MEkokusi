@@ -13,7 +13,7 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var quizArray: [String] = []
     var quizCount = 0
     var mondaiID = ""
-    var touroku = "0"
+    var touroku = 0
     var cellArray:[String] = []
     var mondaiIDArray:[String] = []//問題ID格納してquizviewへ受け渡す
     
@@ -24,56 +24,20 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationItem.title = "title"
-//        self.loadView()
-//        self.viewDidLoad()
-        //self.delegate = self
-        //tabBarController?.tabBar.isHidden = true//tabBar非表示
-
-
         okiniirilist.delegate = self
         okiniirilist.dataSource = self
         
-        
-//        func tabBar(_ tabBar: UITabBar,didSelect item: UITabBarItem) {
-//            if (item.tag == 1){
-//                print("aaaaaa")
-//            } else {
-//                print("bbbbbbb")
-//            }
-//        }
-//        func tabBar(tabBar: UITabBar,didSelectItem item: UITabBarItem) {
-//                switch item.tag {
-//                case 1 :
-//                    print("aaaaaaa")
-//                default:
-//                    print("bbbbbb")
-//                }
-//            }
 
-    }// viewDidLoad終わり
-//func tabBar(tabBar: UITabBar,didSelectItem item: UITabBarItem) {
-//        switch item.tag {
-//        case 1 :
-//            print("aaaaaaa")
-//        default:
-//            print("bbbbbb")
-//        }
-//    }
+    }
+
     //画面が遷移する直前に実行
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.navigationController?.setNavigationBarHidden(true, animated: false)
-            //self.navigationItem.hidesBackButton = true
-//self.navigationItem.setHidesBackButton(false, animated: false)
-//        title = "ブックマーク"
-//       self.navigationItem.setHidesBackButton(false, animated: false)
 
         cellArray = []
         quizCount = 0
         mondaiIDArray = []
-//        print("お気に入りフラグ1\(touroku)")
-        //print("\(touroku1!)")
+
         //csv読み込むブロック
         csvArray = loadCSV(fileName: "quiz0")//quiz0.csv固定
         quizArray = csvArray[quizCount].components(separatedBy: ",")
@@ -171,15 +135,5 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
         toQuizVC.fromBookmark = 1
 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

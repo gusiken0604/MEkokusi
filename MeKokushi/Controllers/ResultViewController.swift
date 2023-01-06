@@ -65,7 +65,7 @@ class ResultViewController: UIViewController {
         if touroku == 0 {
             print(mondaiID)
             //okiniiri1 = "1"
-            let touroku = 0
+            let touroku = 1
             UserDefaults.standard.set(touroku, forKey: mondaiID)
             let image = UIImage(systemName: "star.fill")
             let state = UIControl.State.normal
@@ -78,7 +78,7 @@ class ResultViewController: UIViewController {
             let image = UIImage(systemName: "star")
             let state = UIControl.State.normal
             okiniiri.setImage(image, for: state)
-            //print("解除\(touroku as Any)")
+            print("解除\(touroku as Any)")
         }
     }
     
