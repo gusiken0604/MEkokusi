@@ -8,7 +8,6 @@ target 'MeKokushi' do
   # Pods for MeKokushi
 	 'Google-Mobile-Ads-SDK'
    pod 'RealmSwift'
-   pod 'SwiftLint'
 end
 
 post_install do |installer|

@@ -29,7 +29,7 @@ class QuizViewController: UIViewController {
     var quizNumber = 1
     var existsQuiz = false//次の問題があるのか判定
     var mondai = ""//リザルトに表示させる問題文、mondaiに代入
-    var fromBookmark = 0
+     var fromBookmark = 0
     var fromBookmarkowari = 0
     
     //ナビゲーションバーの右ボタン

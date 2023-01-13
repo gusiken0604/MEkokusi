@@ -30,10 +30,7 @@ class ScoreViewController: UIViewController {
         scoreLabel.text = "\(correctCount2) 問正解！"
         print("\(correctCount2) 問正解！")
 
-    }//viewDidLoad終了
-    
+    }
 
-    
-    
 
 }
