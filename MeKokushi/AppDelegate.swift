@@ -34,11 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         
         
-        do {
-            let realm = try! Realm(fileURL: URL(string: Bundle.main.path(forResource: "default", ofType: "realm")!)!)
-        } catch {
-            print("Error initialising new realm, \(error)")
-        }
+//        do {
+//            let realm = try! Realm(fileURL: URL(string: Bundle.main.path(forResource: "default", ofType: "realm")!)!)
+//        } catch {
+//            print("Error initialising new realm, \(error)")
+//        }
 
         return true
     }

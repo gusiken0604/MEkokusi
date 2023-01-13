@@ -40,7 +40,7 @@ class ResultViewController: UIViewController {
 //            self.performSegue(withIdentifier: "toBookmarkVC", sender: nil)
 //
 //        } else
-        if lastQuiz == true {
+        if lastQuiz {
 
             self.performSegue(withIdentifier: "toScoreVC", sender: nil)
 
@@ -91,7 +91,7 @@ class ResultViewController: UIViewController {
         //quizViewController.judgeNextQuiz()
         
         //print("resultView\(lastQuiz)")
-        if lastQuiz == true {
+        if lastQuiz {
             nextQuiz.setTitle("終了", for: .normal)
         }
 //        } else if fromBookmarkowari1 == 1 {
@@ -128,7 +128,7 @@ class ResultViewController: UIViewController {
        self.navigationItem.setHidesBackButton(true, animated: true)//戻るボタンを消
 //        }
         
-        if result == true {
+        if result {
             hanteiLabel.text = "正解"
         } else {
             hanteiLabel.text = "不正解"
