@@ -200,6 +200,7 @@
 				C56A4C492894C97F008F22C4 /* Frameworks */,
 				C56A4C4A2894C97F008F22C4 /* Resources */,
 				6DB34749058C7019643C4FCB /* [CP] Embed Pods Frameworks */,
+				B23BD3652971B89300B73F23 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -306,6 +307,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeKokushi/Pods-MeKokushi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B23BD3652971B89300B73F23 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n    swiftlint autocorrect --format\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
