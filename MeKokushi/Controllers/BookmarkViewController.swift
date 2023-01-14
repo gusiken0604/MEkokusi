@@ -129,9 +129,9 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
         performSegue(withIdentifier: "toQuizVC", sender: nil)
         
     }
+    // エラー対策
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let toQuizVC = segue.destination as! QuizViewController//エラー対策
-        //toQuizVC.mondaiID = mondaiID
+        let toQuizVC = segue.destination as! QuizViewController
         toQuizVC.fromBookmark = 1
 
     }
