@@ -128,13 +128,8 @@ class ResultViewController: UIViewController {
        self.navigationItem.setHidesBackButton(true, animated: true)// 戻るボタンを消
 //        }
         
-        if result == true {
-            hanteiLabel.text = "正解"
-        } else {
-            hanteiLabel.text = "不正解"
-        }
+        hanteiLabel.text = result ? "正解" : "不正解"
         
-        // print(kotae)
         kaitouLabel.text = "正解は\(kotae)番！ "
         
         mondaiLabel.text = mondai
