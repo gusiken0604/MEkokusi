@@ -18,5 +18,5 @@ class Quiz: Object {
     @objc dynamic var sentaku5 = ""
     @objc dynamic var kotae = 0
     
-    //@objc dynamic var kotae = 0
+    // @objc dynamic var kotae = 0
 }

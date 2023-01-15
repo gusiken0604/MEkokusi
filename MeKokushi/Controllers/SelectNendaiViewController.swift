@@ -20,10 +20,10 @@ class SelectNendaiViewController: UIViewController {
         let quizVC = segue.destination as! QuizViewController
         quizVC.quizTangen = selectedButton
 //        quizVC.quizTangen = selectTag
-        //quizVC.tag2 = selectTag
+        // quizVC.tag2 = selectTag
     }
     
-    @IBAction func nendaiButtonAction(sender: UIButton){
+    @IBAction private func nendaiButtonAction(sender: UIButton){
         print(sender.tag)
 //        selectTag = sender.tag
         performSegue(withIdentifier: "toQuizVC", sender: nil)

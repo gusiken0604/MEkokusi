@@ -11,7 +11,7 @@ class SelectTangenViewController: UIViewController {
     
     var selectedButton = ""
   
-    @IBOutlet var quizSelectButton: [UIButton]!
+    @IBOutlet private var quizSelectButton: [UIButton]!
     
     let buttonNames = ["医学概論","臨床医学概論","医用電気電子工学","医用機械工学","生体物性材料工学","生体機能代行装置学","医用治療機器学","生体計測装置学","医用機器安全管理学"]
 
@@ -41,9 +41,9 @@ class SelectTangenViewController: UIViewController {
         quizVC.quizTangen = selectedButton
     }
     
-    @IBAction func tangenButtonAction(sender: UIButton){
+    @IBAction private func tangenButtonAction(sender: UIButton){
 
-    selectedButton = sender.currentTitle!
+    selectedButton = sender.currentTitle ?? ""
 
         performSegue(withIdentifier: "toQuizVC", sender: nil)
     }

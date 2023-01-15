@@ -11,13 +11,13 @@ import RealmSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    //スキーマバージョン(新しくスキーマを追加したらこのバージョンを上げて)
+    // スキーマバージョン(新しくスキーマを追加したらこのバージョンを上げて)
     let version:UInt64 = 2
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //print(Realm.Configuration.defaultConfiguration.fileURL!)
+        // print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        //realmのマイグレーション
+        // realmのマイグレーション
         let config = Realm.Configuration(
             // スキーマバージョン設定
             schemaVersion: version,
