@@ -133,11 +133,9 @@ class QuizViewController: UIViewController {
                 quizImage = quizArray[8]
                 quizImageView.image = UIImage(named: quizImage)
                 
-            } else {
-
-                nextQuiz()
-                
             }
+            
+            nextQuiz()
             
             answerButton1.setTitle(quizArray[1], for: .normal)
             answerButton2.setTitle(quizArray[2], for: .normal)
