@@ -82,10 +82,9 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 mondaiIDArray += [quizArray[10]]
 //                print(cellArray)
                 nextQuiz()// 追加
-            } else {
-                nextQuiz()
             }
         }
+        nextQuiz()
     }
     
     
