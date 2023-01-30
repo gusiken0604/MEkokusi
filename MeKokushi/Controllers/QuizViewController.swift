@@ -54,14 +54,19 @@ class QuizViewController: UIViewController {
 
 
         // 問題テキスト
+        print("クイズカウント\(quizCount)")
+
+        print("quizArray77\(quizArray[7])")
+//        print("quizTangen\(quizTangen)")
         if quizArray[7] == quizTangen {
+
             quizNumberLabel.text = "第\(quizNumber)問"
             mondai = quizArray[0]
             // print("resultMondai\(mondai)")
             quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
             quizImage = quizArray[8]
             quizImageView.image = UIImage(named: quizImage)
-            
+
         } else {
              nextQuiz()
         }
@@ -82,7 +87,7 @@ class QuizViewController: UIViewController {
         resultVC.quizTangen = quizTangen
         resultVC.mondaiID = quizArray[10]
         resultVC.lastQuiz = existsQuiz// 次の問題があるのか判定
-        print("ラストクイズ\(existsQuiz)")
+
         // resultVC.fromBookmarkowari1 = fromBookmarkowari
     }
     // ボタンを押したときに呼ばれる
@@ -122,20 +127,24 @@ class QuizViewController: UIViewController {
     // 次の問題を表示させるブロック
     func nextQuiz(){
 
-        quizCount += 1
-        if quizCount < csvArray.count {
+        if quizCount + 1 < csvArray.count {
+
+            quizCount += 1
             quizArray = csvArray[quizCount].components(separatedBy:",")
-            
+
             if quizArray[7] == quizTangen {
+
                 quizNumberLabel.text = "第\(quizNumber)問"
                 quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
                 mondai = quizArray[0]
                 quizImage = quizArray[8]
                 quizImageView.image = UIImage(named: quizImage)
                 
+            } else {
+
+                nextQuiz()
             }
             
-            nextQuiz()
             
             answerButton1.setTitle(quizArray[1], for: .normal)
             answerButton2.setTitle(quizArray[2], for: .normal)
@@ -190,7 +199,7 @@ class QuizViewController: UIViewController {
     
     // CSV読み込むブロック
     func loadCSV(fileName: String) -> [String] {
-        let csvBundle = Bundle.main.path(forResource: fileName, ofType:"csv")!
+        let csvBundle = Bundle.main.path(forResource: fileName, ofType:"csv") ?? ""
         do {
             let csvData = try String(contentsOfFile: csvBundle,encoding: String.Encoding.utf8)
             let lineCange = csvData.replacingOccurrences(of: "\r",with:"\n")
@@ -203,9 +212,8 @@ class QuizViewController: UIViewController {
     }
     
     func exisitsNextQuiz() {
-        quizCount += 1
-        if quizCount < csvArray.count {
-            quizCount -= 1
+        if quizCount + 1 < csvArray.count {
+            
         } else {
             existsQuiz = true
         }

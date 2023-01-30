@@ -86,6 +86,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("リザルトクイズカウント\(quizCount)")
 //        let quizViewController = QuizViewController()
 //        quizViewController.nextQuiz()
         // quizViewController.judgeNextQuiz()
@@ -148,13 +149,13 @@ class ResultViewController: UIViewController {
                 print("mondaisuu1は\(mondaisuu)")
                 quizVC.quizTangen = quizTangen
                 quizVC.correctCount = correctCount
-                
-            }   else {
+                        }   else {
             }
         }
 
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
+        
         // navigationController?.isNavigationBarHidden = false
     }
 

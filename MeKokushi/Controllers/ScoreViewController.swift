@@ -14,8 +14,6 @@ class ScoreViewController: UIViewController {
     
     @objc func rightButtonPressed1(_ sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewController(animated: true)// 1番最初に戻る
-
-
     }
     
     override func viewDidLoad() {
