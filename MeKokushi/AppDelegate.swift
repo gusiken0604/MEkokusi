@@ -33,27 +33,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // デフォルトRealmに新しい設定適用
         Realm.Configuration.defaultConfiguration = config
         
-        
-        do {
-            let realm = try! Realm(fileURL: URL(string: Bundle.main.path(forResource: "default", ofType: "realm")!)!)
-        } catch {
-            print("Error initialising new realm, \(error)")
+        guard let realmURL = Bundle.main.url(forResource: "default", withExtension: "realm"),
+             let _ = try? Realm(fileURL: realmURL) else {
+            fatalError("Failed to open Realm file")
         }
-        
         return true
     }
         
         func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-            // Called when a new scene session is being created.
-            // Use this method to select a configuration to create the new scene with.
-            return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+            
+            UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+            
         }
+    
         
         func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-
+            
         }
-        
-        
     }
     
 

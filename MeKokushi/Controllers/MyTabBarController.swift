@@ -16,12 +16,9 @@ class MyTabBarController: UITabBarController,UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if viewController is BookmarkViewController {
-//            self.loadView()
-//            self.viewDidLoad()
-//            self.performSegue(withIdentifier: "toBookmarkVC", sender: nil)
-            print("aaaaaa")
+
         } else {
-            print("bbbbbbb")
+ 
         }
     }
 }

@@ -28,6 +28,7 @@ class ResultViewController: UIViewController {
    // var okiniiri1 = ""//お気に入り登録
     var lastQuiz = false
     let touroku = 0
+//    var maxQuizCount = 0
    // var fromBookmarkowari1 = 0
     
     
@@ -85,27 +86,14 @@ class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("リザルトクイズカウント\(quizCount)")
-//        let quizViewController = QuizViewController()
-//        quizViewController.nextQuiz()
-        // quizViewController.judgeNextQuiz()
-        
-        // print("resultView\(lastQuiz)")
+
         if lastQuiz == true {
             nextQuiz.setTitle("終了", for: .normal)
+            maxSelectTangenQuizCount = 0
+            print("マックスクイズカウント\(maxSelectTangenQuizCount)")
         }
-//        } else if fromBookmarkowari1 == 1 {
-//            nextQuiz.setTitle("終了", for: .normal)
-//        } else {
-//
-//        }
-        // print("問題番号\(mondaiID)")
-        // mondaiIID = mondaiID
-        // print("最初読み込む前\(touroku)")
+
         let touroku = UserDefaults.standard.integer(forKey: mondaiID)
-        // print("登録判定\(mondaiID)")
-        
         
     // お気に入りボタン
         if touroku == 0 {

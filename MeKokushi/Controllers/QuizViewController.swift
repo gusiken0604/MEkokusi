@@ -7,8 +7,10 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+var maxSelectTangenQuizCount = 0
 
+class QuizViewController: UIViewController {
+    
     @IBOutlet private var quizNumberLabel: UILabel!
     @IBOutlet private var quizTextView: UITextView!
     @IBOutlet private var answerButton1: UIButton!
@@ -27,7 +29,7 @@ class QuizViewController: UIViewController {
     var quizImage = ""
     var result = false
     var quizNumber = 1
-    var existsQuiz = false// 次の問題があるのか判定
+    var lastsQuiz = false// 次の問題があるのか判定
     var mondai = ""// リザルトに表示させる問題文、mondaiに代入
     var fromBookmark = 0
     var fromBookmarkowari = 0
@@ -50,19 +52,30 @@ class QuizViewController: UIViewController {
         csvArray = loadCSV(fileName: "quiz0")// quiz0.csv固定
         quizArray = csvArray[quizCount].components(separatedBy: ",")
         
+        if maxSelectTangenQuizCount == 0 {
+            print("mazQuizCount回している")
+            getMaxSelectTangenQuizCount()
+        }
         
-
-
-        // 問題テキスト
-        print("クイズカウント\(quizCount)")
-
-        print("quizArray77\(quizArray[7])")
-//        print("quizTangen\(quizTangen)")
+        if quizNumber == maxSelectTangenQuizCount {
+            lastsQuiz = true
+        }
+        func getMaxSelectTangenQuizCount() {
+            while quizCount < csvArray.count {
+                let quizArray = csvArray[quizCount].components(separatedBy: ",")
+                if quizArray[7] == quizTangen {
+                    maxSelectTangenQuizCount += 1
+                              }
+                quizCount += 1
+            }
+              quizCount = 0
+            quizArray = csvArray[quizCount].components(separatedBy: ",")
+        }
+        
+        
         if quizArray[7] == quizTangen {
-
             quizNumberLabel.text = "第\(quizNumber)問"
             mondai = quizArray[0]
-            // print("resultMondai\(mondai)")
             quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
             quizImage = quizArray[8]
             quizImageView.image = UIImage(named: quizImage)
@@ -70,7 +83,6 @@ class QuizViewController: UIViewController {
         } else {
              nextQuiz()
         }
- 
         buttonLayout()
     }
     
@@ -86,7 +98,7 @@ class QuizViewController: UIViewController {
         resultVC.mondaisuu = quizNumber
         resultVC.quizTangen = quizTangen
         resultVC.mondaiID = quizArray[10]
-        resultVC.lastQuiz = existsQuiz// 次の問題があるのか判定
+        resultVC.lastQuiz = lastsQuiz// 次の問題があるのか判定
 
         // resultVC.fromBookmarkowari1 = fromBookmarkowari
     }
@@ -126,14 +138,14 @@ class QuizViewController: UIViewController {
     }
     // 次の問題を表示させるブロック
     func nextQuiz(){
-
+//        print("現在の単元2\(quizArray[7])")
         if quizCount + 1 < csvArray.count {
 
             quizCount += 1
             quizArray = csvArray[quizCount].components(separatedBy:",")
 
             if quizArray[7] == quizTangen {
-
+                print("現在の単元3\(quizArray[7])")
                 quizNumberLabel.text = "第\(quizNumber)問"
                 quizTextView.text = quizArray[0].replacingOccurrences(of: "　", with: "\n")
                 mondai = quizArray[0]
@@ -154,7 +166,7 @@ class QuizViewController: UIViewController {
             
       }
         
-        exisitsNextQuiz()
+//        exisitsNextQuiz()
     }
     
     func buttonLayout() {
@@ -211,12 +223,6 @@ class QuizViewController: UIViewController {
         return csvArray
     }
     
-    func exisitsNextQuiz() {
-        if quizCount + 1 < csvArray.count {
-            
-        } else {
-            existsQuiz = true
-        }
-        
-    }
+
+
 }
