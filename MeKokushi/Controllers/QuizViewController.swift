@@ -52,6 +52,7 @@ class QuizViewController: UIViewController {
         csvArray = loadCSV(fileName: "quiz0")// quiz0.csv固定
         quizArray = csvArray[quizCount].components(separatedBy: ",")
         
+//<<<<<<< HEAD
         if maxSelectTangenQuizCount == 0 {
             print("mazQuizCount回している")
             getMaxSelectTangenQuizCount()
@@ -73,6 +74,21 @@ class QuizViewController: UIViewController {
         }
         
         
+//=======
+        var quizNum = 0
+        //for quizCount+1<csvArray.count
+        if quizArray[7] == quizTangen {
+            quizNum += 1
+            
+        }
+
+
+        // 問題テキスト
+        print("クイズカウント\(quizCount)")
+
+        print("quizArray77\(quizArray[7])")
+//        print("quizTangen\(quizTangen)")
+>>>>>>> origin/pr_test
         if quizArray[7] == quizTangen {
             quizNumberLabel.text = "第\(quizNumber)問"
             mondai = quizArray[0]
