@@ -18,7 +18,7 @@ class SelectNendaiViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizVC = segue.destination as! QuizViewController
-        quizVC.quizTangen = selectedButton
+        quizVC.selectedQuizTangen = selectedButton
 //        quizVC.quizTangen = selectTag
         // quizVC.tag2 = selectTag
     }

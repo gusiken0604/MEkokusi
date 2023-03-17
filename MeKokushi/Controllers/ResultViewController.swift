@@ -22,7 +22,7 @@ class ResultViewController: UIViewController {
     var correctCount = 1
     var quizCount = 0
     var mondaisuu = 0
-    var quizTangen = ""
+    var selectedQuizTangen = ""
     var changeImage = 0
     var mondaiID = "0"
    // var okiniiri1 = ""//お気に入り登録
@@ -135,7 +135,7 @@ class ResultViewController: UIViewController {
                 quizVC.quizCount = quizCount + 1// 次の問題
                 quizVC.quizNumber = mondaisuu + 1
                 print("mondaisuu1は\(mondaisuu)")
-                quizVC.quizTangen = quizTangen
+                quizVC.selectedQuizTangen = selectedQuizTangen
                 quizVC.correctCount = correctCount
                         }   else {
             }

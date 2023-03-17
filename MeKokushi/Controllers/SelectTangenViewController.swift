@@ -36,7 +36,7 @@ class SelectTangenViewController: UIViewController {
         
         let quizVC = segue.destination as! QuizViewController
 
-        quizVC.quizTangen = selectedButton
+        quizVC.selectedQuizTangen = selectedButton
     }
     
     @IBAction private func tangenButtonAction(sender: UIButton){
