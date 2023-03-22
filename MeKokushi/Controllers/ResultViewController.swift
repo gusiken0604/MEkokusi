@@ -17,10 +17,9 @@ class ResultViewController: UIViewController {
     
     var correct = 0 // エラー対策
     var result = false// 正誤判定、１が正解
-    var kotae = "0" // 問題の答え
+    var kotae = 0 // 問題の答え
     var mondai = "0"
     var correctCount = 1
-    var quizCount = 0
     var mondaisuu = 0
     var selectedQuizTangen = ""
     var changeImage = 0
@@ -41,8 +40,8 @@ class ResultViewController: UIViewController {
 //            self.performSegue(withIdentifier: "toBookmarkVC", sender: nil)
 //
 //        } else
-        if lastQuiz == true {
-
+        if lastQuiz {
+            print("resurtlastQuiz")
             self.performSegue(withIdentifier: "toScoreVC", sender: nil)
 
         } else {
@@ -89,8 +88,10 @@ class ResultViewController: UIViewController {
 
         if lastQuiz == true {
             nextQuiz.setTitle("終了", for: .normal)
+            selectQuizTangenCount = 0
             maxSelectTangenQuizCount = 0
-            print("マックスクイズカウント\(maxSelectTangenQuizCount)")
+            quizCount = 0
+
         }
 
         let touroku = UserDefaults.standard.integer(forKey: mondaiID)
@@ -132,15 +133,14 @@ class ResultViewController: UIViewController {
                 scoreVC.correctCount2 = correctCount
             } else if segue.identifier == "toQuizVC1"{
                 let quizVC = segue.destination as! QuizViewController
-                quizVC.quizCount = quizCount + 1// 次の問題
-                quizVC.quizNumber = mondaisuu + 1
-                print("mondaisuu1は\(mondaisuu)")
+                selectQuizTangenCount += 1
+                quizCount += 1
+               // print("quizCountResult\(quizCount)")
                 quizVC.selectedQuizTangen = selectedQuizTangen
                 quizVC.correctCount = correctCount
-                        }   else {
             }
         }
-
+    
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
