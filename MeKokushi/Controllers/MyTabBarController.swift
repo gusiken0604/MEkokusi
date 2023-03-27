@@ -14,11 +14,11 @@ class MyTabBarController: UITabBarController,UITabBarControllerDelegate {
         self.delegate = self
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if viewController is BookmarkViewController {
-
-        } else {
- 
-        }
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//        if viewController is BookmarkViewController {
+//
+//        } else {
+// 
+//        }
+//    }
 }

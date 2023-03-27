@@ -52,9 +52,9 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
             mondaiIDArray += [quizArray[10]]
 //            print("お気に入りフラグifff\(touroku!)")
 //            print("クイズカウント2番\(quizCount)")//0
-            nextQuiz()
+            //nextQuiz()
         } else {
-            nextQuiz()// 修正前
+            //nextQuiz()// 修正前
         }
         okiniirilist.reloadData()
 //        print("画面遷移")
@@ -81,10 +81,10 @@ class BookmarkViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 cellArray += [quizArray[0]]
                 mondaiIDArray += [quizArray[10]]
 //                print(cellArray)
-                nextQuiz()// 追加
+                //nextQuiz()// 追加
             }
         }
-        nextQuiz()
+        //nextQuiz()
     }
     
     

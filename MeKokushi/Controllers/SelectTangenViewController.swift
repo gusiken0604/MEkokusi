@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectTangenViewController: UIViewController {
+class SelectTangenViewController: UIViewController, UITabBarDelegate {
     
     var selectedButton = ""
   
