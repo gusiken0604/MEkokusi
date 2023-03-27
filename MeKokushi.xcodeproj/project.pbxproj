@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A2F37885EEF1E2EC55715055 /* Pods_MeKokushi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C5A775C3DC743F3D1AFB12 /* Pods_MeKokushi.framework */; };
 		B234F6A52954E35C009B605B /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = B234F6A42954E35C009B605B /* default.realm */; };
+		B26FB0A629D15194007363CB /* ResultView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26FB0A529D15194007363CB /* ResultView.storyboard */; };
+		B26FB0A829D15532007363CB /* QuizView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26FB0A729D15532007363CB /* QuizView.storyboard */; };
 		B2F9A1D029D14C0C004A07FB /* ScoreView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F9A1CF29D14C0C004A07FB /* ScoreView.storyboard */; };
 		C529D36528EF363B00BC314D /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C529D36428EF363B00BC314D /* MyTabBarController.swift */; };
 		C52A73F3289EB158009C1241 /* 30AM40-0.webp in Resources */ = {isa = PBXBuildFile; fileRef = C52A73F2289EB158009C1241 /* 30AM40-0.webp */; };
@@ -37,6 +39,8 @@
 		45662EC8D4600657E2C0ED8E /* Pods-MeKokushi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeKokushi.debug.xcconfig"; path = "Target Support Files/Pods-MeKokushi/Pods-MeKokushi.debug.xcconfig"; sourceTree = "<group>"; };
 		A9C5A775C3DC743F3D1AFB12 /* Pods_MeKokushi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeKokushi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B234F6A42954E35C009B605B /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
+		B26FB0A529D15194007363CB /* ResultView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultView.storyboard; sourceTree = "<group>"; };
+		B26FB0A729D15532007363CB /* QuizView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizView.storyboard; sourceTree = "<group>"; };
 		B2F9A1CF29D14C0C004A07FB /* ScoreView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScoreView.storyboard; sourceTree = "<group>"; };
 		C529D36428EF363B00BC314D /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		C52A73F2289EB158009C1241 /* 30AM40-0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "30AM40-0.webp"; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				C56A4C552894C97F008F22C4 /* Main.storyboard */,
+				B26FB0A729D15532007363CB /* QuizView.storyboard */,
+				B26FB0A529D15194007363CB /* ResultView.storyboard */,
 				B2F9A1CF29D14C0C004A07FB /* ScoreView.storyboard */,
 			);
 			path = Views;
@@ -245,9 +251,11 @@
 				C52A73F3289EB158009C1241 /* 30AM40-0.webp in Resources */,
 				C56A4C6C289526E0008F22C4 /* incorrect.png in Resources */,
 				C52A73F5289EB9D9009C1241 /* 30AM40.jpeg in Resources */,
+				B26FB0A829D15532007363CB /* QuizView.storyboard in Resources */,
 				C56A4C5C2894C980008F22C4 /* LaunchScreen.storyboard in Resources */,
 				B2F9A1D029D14C0C004A07FB /* ScoreView.storyboard in Resources */,
 				C56A4C592894C980008F22C4 /* Assets.xcassets in Resources */,
+				B26FB0A629D15194007363CB /* ResultView.storyboard in Resources */,
 				C5B967B1289B680C00CCA641 /* 180.png in Resources */,
 				C56A4C572894C97F008F22C4 /* Main.storyboard in Resources */,
 				B234F6A52954E35C009B605B /* default.realm in Resources */,
