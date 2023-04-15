@@ -23,7 +23,7 @@ class SelectTangenViewController: UIViewController, UITabBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       // print("quizResults432\(quizResults)")
         let UINavigationController = tabBarController?.viewControllers?[1];
         tabBarController?.selectedViewController = UINavigationController;
         
@@ -42,7 +42,9 @@ class SelectTangenViewController: UIViewController, UITabBarDelegate {
     @IBAction private func tangenButtonAction(sender: UIButton){
 
     selectedButton = sender.currentTitle ?? ""
-
+        selectQuizTangenCount = 0
+        maxSelectTangenQuizCount = 0
+        quizCount = 0
         performSegue(withIdentifier: "toQuizVC", sender: nil)
     }
 }

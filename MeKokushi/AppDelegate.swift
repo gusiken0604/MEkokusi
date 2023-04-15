@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RealmSwift
+//import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,25 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         // realmのマイグレーション
-        let config = Realm.Configuration(
-            // スキーマバージョン設定
-            schemaVersion: version,
-            
-            // 実際のマイグレーション処理　古いスキーマバージョンのRealmを開こうとすると自動的にマイグレーションが実行
-            migrationBlock: { migration, oldSchemaVersion in
-                // 初めてのマイグレーションの場合、oldSchemaVersionは0
-                if (oldSchemaVersion < self.version) {
-                    // 変更点を自動的に認識しスキーマをアップデートする（ここで勝手にするから何も書かない）
-                }
-            })
-        
-        // デフォルトRealmに新しい設定適用
-        Realm.Configuration.defaultConfiguration = config
-        
-        guard let realmURL = Bundle.main.url(forResource: "default", withExtension: "realm"),
-             let _ = try? Realm(fileURL: realmURL) else {
-            fatalError("Failed to open Realm file")
-        }
+//        let config = Realm.Configuration(
+//            // スキーマバージョン設定
+//            schemaVersion: version,
+//            
+//            // 実際のマイグレーション処理　古いスキーマバージョンのRealmを開こうとすると自動的にマイグレーションが実行
+//            migrationBlock: { migration, oldSchemaVersion in
+//                // 初めてのマイグレーションの場合、oldSchemaVersionは0
+//                if (oldSchemaVersion < self.version) {
+//                    // 変更点を自動的に認識しスキーマをアップデートする（ここで勝手にするから何も書かない）
+//                }
+//            })
+//        
+//        // デフォルトRealmに新しい設定適用
+//        Realm.Configuration.defaultConfiguration = config
+//        
+//        guard let realmURL = Bundle.main.url(forResource: "default", withExtension: "realm"),
+//             let _ = try? Realm(fileURL: realmURL) else {
+//            fatalError("Failed to open Realm file")
+//        }
         return true
     }
         

@@ -169,51 +169,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtf-cW-IXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4242.3999999999996" y="98.50074962518741"/>
+            <point key="canvasLocation" x="3673" y="99"/>
         </scene>
-        <!--ブックマーク-->
-        <scene sceneID="HQ6-WL-wBt">
+        <!--HistoryView-->
+        <scene sceneID="B4T-v9-1du">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="yyN-9f-TES" customClass="BookmarkViewController" customModule="MeKokushi" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dxv-JL-fvo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jq2-bz-DMc">
-                                <rect key="frame" x="16" y="44" width="343" height="574"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell0" rowHeight="100" id="gRB-Zz-5gN">
-                                        <rect key="frame" x="0.0" y="50" width="343" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRB-Zz-5gN" id="hoU-1x-tJe">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="yyN-9f-TES" id="VUC-r2-Og4"/>
-                                    <outlet property="delegate" destination="yyN-9f-TES" id="Nnh-3Z-kv7"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="DMh-eM-uQa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="ブックマーク" image="book" catalog="system" id="oNy-6W-94T"/>
-                    <navigationItem key="navigationItem" title="ブックマーク" leftItemsSupplementBackButton="YES" id="cYU-Jo-a3e">
-                        <barButtonItem key="backBarButtonItem" enabled="NO" title="＞＞戻" id="g0D-gQ-UKa"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="bookmark" destination="oNy-6W-94T" id="LcK-rl-3xy"/>
-                        <outlet property="okiniirilist" destination="Jq2-bz-DMc" id="Ivx-hr-0o5"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eVe-Lo-2rV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="HistoryView" referencedIdentifier="HistoryView" id="Eoy-Qk-AOa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="40T-0p-NBc"/>
+                    <navigationItem key="navigationItem" id="Ahz-Mx-bvj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QN0-sk-A9E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2575" y="958"/>
+            <point key="canvasLocation" x="2020" y="659"/>
+        </scene>
+        <!--BookmarkView-->
+        <scene sceneID="qOp-Jf-zA5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BookmarkView" referencedIdentifier="BookmarkView" id="bFM-RF-aDH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zaB-Xa-3RV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4k-SA-R4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575" y="742"/>
         </scene>
         <!--QuizView-->
         <scene sceneID="Wn1-bK-gXj">
@@ -223,7 +200,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEl-95-ZdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5025" y="-472"/>
+            <point key="canvasLocation" x="4614" y="98"/>
         </scene>
         <!--HOME-->
         <scene sceneID="y9z-Aw-3ke">
@@ -257,7 +234,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="cwt-da-NPq" kind="relationship" relationship="viewControllers" id="oIF-EC-8Xo"/>
-                        <segue destination="yyN-9f-TES" kind="relationship" relationship="viewControllers" id="dLz-qi-JH1"/>
+                        <segue destination="bFM-RF-aDH" kind="relationship" relationship="viewControllers" id="kdc-QI-sE6"/>
+                        <segue destination="Eoy-Qk-AOa" kind="relationship" relationship="viewControllers" id="MIy-A7-25a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh0-Dd-zSo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -266,7 +244,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book" catalog="system" width="128" height="99"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <namedColor name="AccentColor">

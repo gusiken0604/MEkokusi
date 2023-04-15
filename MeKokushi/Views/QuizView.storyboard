@@ -52,7 +52,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="btnActionWithSender:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="Igs-uN-kBn"/>
+                                            <action selector="btmAction:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="3Cc-PN-oWi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IS-YW-6Oz">
@@ -61,7 +61,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="btnActionWithSender:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="aeM-BN-l7m"/>
+                                            <action selector="btmAction:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="TcV-11-ZmI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpq-xf-qsb">
@@ -70,7 +70,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="btnActionWithSender:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="HG3-qr-Nho"/>
+                                            <action selector="btmAction:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="sm9-c7-cmP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-fl-X2r">
@@ -79,7 +79,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="btnActionWithSender:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="yaD-hg-he5"/>
+                                            <action selector="btmAction:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="pq4-SY-gcE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAo-Kg-rVm">
@@ -88,7 +88,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="btnActionWithSender:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="UeN-aM-w6e"/>
+                                            <action selector="btmAction:" destination="fbs-Cc-L0v" eventType="touchUpInside" id="I2E-5f-Amb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -129,6 +129,7 @@
                         <outlet property="quizNumberLabel" destination="S7k-xd-jRw" id="Hzi-qi-Jfp"/>
                         <outlet property="quizTextView" destination="7WA-71-yFN" id="Ukn-9b-FIZ"/>
                         <segue destination="mf1-XV-VNE" kind="show" identifier="toResultVC" id="Nvd-NL-9Ha"/>
+                        <segue destination="RBg-ys-NcP" kind="show" identifier="toHistoryVC" id="Da9-Gl-Ydx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zk-v3-b38" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -143,7 +144,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BB-MS-kpq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5843" y="-54"/>
+            <point key="canvasLocation" x="5792" y="98"/>
+        </scene>
+        <!--HistoryView-->
+        <scene sceneID="CVo-ci-gKc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryView" referencedIdentifier="HistoryView" id="RBg-ys-NcP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PqG-j9-TlZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6eV-2i-NVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5631" y="292"/>
         </scene>
     </scenes>
     <resources>

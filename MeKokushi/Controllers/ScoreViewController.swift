@@ -26,7 +26,7 @@ class ScoreViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TOP",style: .plain,target: self,action: action)
 
         scoreLabel.text = "\(correctCount2) 問正解！"
-        print("\(correctCount2) 問正解！")
+        //print("\(quizResults) 問正解！")
 
     }
 
