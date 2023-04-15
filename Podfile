@@ -7,7 +7,7 @@ target 'MeKokushi' do
 
   # Pods for MeKokushi
 	 'Google-Mobile-Ads-SDK'
-   pod 'RealmSwift'
+   'RealmSwift'
    pod 'SwiftLint'
 end
 

@@ -1,5 +1,4 @@
 librealm-monorepo.a
-
 # Xcode
 
 ## Build generated
@@ -42,3 +41,33 @@ playground.xcworkspace
 
 # CococaPods
 Pods/
+
+# Carthage
+Carthage/*
+node_modules/*
+
+# Bundler
+/.bundle
+/vendor/bundle
+
+# Mac
+.DS_Store
+
+node_modules/
+
+# fastlane specific
+fastlane/report.xml
+
+# deliver temporary files
+fastlane/Preview.html
+
+# snapshot generated screenshots
+fastlane/screenshots/**/*.png
+fastlane/screenshots/screenshots.html
+
+# scan temporary files
+fastlane/test_output
+
+### direnv ###
+.envrc
+.env
